@@ -1,0 +1,10 @@
+database:
+    driver: pdo_sqlite
+    path: :memory:
+scanners:
+    -
+        scanner: table
+        include:
+            - { assertion: tableNameMatchesRegex, pattern: /^foo$/ }
+        assertions:
+            - { assertion: tableNameMatchesRegex, pattern: /./ }

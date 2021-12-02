@@ -1,0 +1,8 @@
+database:
+    driver: pdo_sqlite
+    path: :memory:
+scanners:
+    -
+        scanner: \Ork\Crom\Scanner\TableScanner
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: camel }

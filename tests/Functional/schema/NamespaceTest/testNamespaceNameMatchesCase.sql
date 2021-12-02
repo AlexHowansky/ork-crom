@@ -1,0 +1,4 @@
+CREATE SCHEMA FOCAL_BANGER;
+CREATE SCHEMA choppin_broccoli;
+CREATE SCHEMA laLunaRosa;
+CREATE SCHEMA BumbleFetish;

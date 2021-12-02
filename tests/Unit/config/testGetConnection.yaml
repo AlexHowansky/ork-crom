@@ -1,0 +1,9 @@
+database:
+    driver: pdo_sqlite
+    path: :memory:
+scanners:
+    -
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: camel }
+

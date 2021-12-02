@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: autoinc
+        scanner: column
+        assertions:
+            - { assertion: columnIsAutoincrement }

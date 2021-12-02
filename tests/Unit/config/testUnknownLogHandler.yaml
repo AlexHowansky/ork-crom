@@ -1,0 +1,12 @@
+database:
+    driver: pdo_sqlite
+    path: :memory:
+logger:
+    handlers:
+        -
+            handler: foo
+scanners:
+    -
+        scanner: table
+        assertions:
+            -

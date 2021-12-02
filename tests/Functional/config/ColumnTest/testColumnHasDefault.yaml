@@ -1,0 +1,16 @@
+scanners:
+    -
+        label: anyDefault
+        scanner: column
+        assertions:
+            - { assertion: columnHasDefault }
+    -
+        label: zeroDefault
+        scanner: column
+        assertions:
+            - { assertion: columnHasDefault, value: 0 }
+    -
+        label: fooDefault
+        scanner: column
+        assertions:
+            - { assertion: columnHasDefault, value: foo }

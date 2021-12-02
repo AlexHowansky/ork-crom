@@ -1,0 +1,7 @@
+database:
+    driver: pdo_sqlsrv
+    dbname: tempdb
+    host: 127.0.0.1
+    port: 1433
+    user: sa
+    password: Ork_CROM

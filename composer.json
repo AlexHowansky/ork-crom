@@ -1,0 +1,63 @@
+{
+    "name": "ork/crom",
+    "description": "A tool to ensure that a relational database schema meets a set of specifications.",
+    "homepage": "http://github.com/AlexHowansky/ork-crom",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Howansky",
+            "email": "alex.howansky@gmail.com",
+            "homepage": "https://github.com/AlexHowansky"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^3.1.4",
+        "jawira/case-converter": "^3.4",
+        "monolog/monolog": "^2.3",
+        "php": "^8",
+        "symfony/yaml": "^5.3"
+    },
+    "require-dev": {
+        "bramus/ansi-php": "^3.1",
+        "ext-pdo_sqlite": "*",
+        "ork/phpcs": "^2.7",
+        "phpmetrics/phpmetrics": "^2.7",
+        "phpstan/phpstan": "^1.2",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-master"
+    },
+    "suggest": {
+        "ext-ibm_db2" : "Required to scan IBM DB2 databases.",
+        "ext-mysqli": "Required to scan MySQL databases.",
+        "ext-oci8": "Required to scan Oracle databases.",
+        "ext-sqlsrv": "Required to scan SQLServer databases.",
+        "ext-pdo_mysql": "Required to scan MySQL databases.",
+        "ext-pdo_oci": "Required to scan Oracle databases.",
+        "ext-pdo_pgsql": "Required to scan Postgres databases.",
+        "ext-pdo_sqlite": "Required to scan SQLite databases.",
+        "ext-pdo_sqlsrv": "Required to scan SQLServer databases."
+    },
+    "autoload": {
+        "psr-4": {
+            "Ork\\Crom\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ork\\Crom\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "coverage": "XDEBUG_MODE=coverage phpunit",
+        "coverage-functional": "XDEBUG_MODE=coverage phpunit --testsuite functional",
+        "coverage-unit": "XDEBUG_MODE=coverage phpunit --testsuite unit",
+        "doc": "phpDocumentor",
+        "metrics": "phpmetrics --config=phpmetrics.json",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyze",
+        "test": "phpunit --no-coverage",
+        "test-functional": "phpunit --testsuite functional --no-coverage",
+        "test-unit": "phpunit --testsuite unit --no-coverage"
+    }
+}

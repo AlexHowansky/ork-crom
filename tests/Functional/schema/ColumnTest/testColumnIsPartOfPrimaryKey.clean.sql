@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS snickers;
+DROP TABLE IF EXISTS mounds;

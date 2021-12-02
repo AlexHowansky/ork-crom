@@ -1,0 +1,14 @@
+{
+    "progress": "verbose",
+    "scanners": [
+        {
+            "scanner": "table",
+            "assertions": [
+                {
+                    "assertion": "tableNameMatchesCase",
+                    "strategy": "macro"
+                }
+            ]
+        }
+    ]
+}

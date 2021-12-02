@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: pkey
+        scanner: column
+        assertions:
+            - { assertion: columnIsPrimaryKey }

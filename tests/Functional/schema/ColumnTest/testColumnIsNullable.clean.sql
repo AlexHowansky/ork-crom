@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS wendys;
+DROP TABLE IF EXISTS white_castle;

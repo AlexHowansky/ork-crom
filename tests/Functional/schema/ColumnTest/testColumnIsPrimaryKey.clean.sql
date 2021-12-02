@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS whoppers;
+DROP TABLE IF EXISTS twizzlers;

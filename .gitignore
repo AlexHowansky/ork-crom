@@ -1,0 +1,9 @@
+/.coverage/
+/.doc/
+/.junit.xml
+/.metrics
+/.phpunit.result.cache
+/phpcs.xml
+/phpstan.neon
+/phpunit.xml
+/vendor/

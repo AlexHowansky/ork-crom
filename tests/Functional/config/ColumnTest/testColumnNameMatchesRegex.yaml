@@ -1,0 +1,11 @@
+scanners:
+    -
+        label: underscore
+        scanner: column
+        assertions:
+            - { assertion: columnNameMatchesRegex, pattern: /_/ }
+    -
+        label: short
+        scanner: column
+        assertions:
+            - { assertion: columnNameMatchesRegex, pattern: "/^.{4,6}$/" }

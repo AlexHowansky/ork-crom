@@ -1,0 +1,16 @@
+scanners:
+    -
+        label: macro
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesCase, strategy: macro }
+    -
+        label: snake
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesCase, strategy: snake }
+    -
+        label: camel
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesCase, strategy: camel }

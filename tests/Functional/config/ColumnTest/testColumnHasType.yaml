@@ -1,0 +1,16 @@
+scanners:
+    -
+        label: integer
+        scanner: column
+        assertions:
+            - { assertion: columnHasType, type: integer }
+    -
+        label: string
+        scanner: column
+        assertions:
+            - { assertion: columnHasType, type: string }
+    -
+        label: date
+        scanner: column
+        assertions:
+            - { assertion: columnHasType, type: date }

@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS belgium;
+DROP TABLE IF EXISTS thailand;

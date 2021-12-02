@@ -1,0 +1,7 @@
+progress: foo
+scanners:
+    -
+        scanner: table
+        assertions:
+            -
+                assertion: -

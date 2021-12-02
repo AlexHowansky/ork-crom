@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+try {
+    exit((new \Ork\Crom\Scan($argv[1] ?? 'crom.yaml'))());
+} catch (\Throwable $e) {
+    echo $e->getMessage(), "\n";
+    exit(1);
+}

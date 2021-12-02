@@ -1,0 +1,16 @@
+scanners:
+    -
+        label: macro
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: macro }
+    -
+        label: snake
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: snake }
+    -
+        label: camel
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: camel }

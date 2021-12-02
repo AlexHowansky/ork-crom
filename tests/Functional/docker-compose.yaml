@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+    mariadb:
+        image: mariadb:10
+        restart: always
+        ports:
+            - 3307:3306
+        environment:
+            MARIADB_DATABASE: ork_crom
+            MARIADB_USER: ork_crom
+            MARIADB_PASSWORD: ork_crom
+            MARIADB_RANDOM_ROOT_PASSWORD: 1
+    mysql:
+        image: mysql:8
+        restart: always
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_DATABASE: ork_crom
+            MYSQL_USER: ork_crom
+            MYSQL_PASSWORD: ork_crom
+            MYSQL_RANDOM_ROOT_PASSWORD: 1
+    postgres:
+        image: postgres:14
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_DB: ork_crom
+            POSTGRES_USER: ork_crom
+            POSTGRES_PASSWORD: ork_crom
+    sqlServer:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        restart: always
+        ports:
+            - 1433:1433
+        environment:
+            ACCEPT_EULA: Y
+            SA_PASSWORD: Ork_CROM

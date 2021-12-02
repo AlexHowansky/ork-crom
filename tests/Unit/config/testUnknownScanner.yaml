@@ -1,0 +1,6 @@
+scanners:
+    -
+        scanner: foo
+        assertions:
+            -
+                assertion: -

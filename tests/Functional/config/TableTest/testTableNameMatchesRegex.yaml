@@ -1,0 +1,11 @@
+scanners:
+    -
+        label: dragon
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesRegex, pattern: /^dragon_/i }
+    -
+        label: nodash
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesRegex, pattern: /^[^_]+$/ }

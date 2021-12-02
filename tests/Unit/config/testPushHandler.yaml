@@ -1,0 +1,12 @@
+database:
+    driver: pdo_sqlite
+    path: :memory:
+logger:
+     handlers:
+         -
+             handler: \Monolog\Handler\NullHandler
+scanners:
+    -
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: camel }

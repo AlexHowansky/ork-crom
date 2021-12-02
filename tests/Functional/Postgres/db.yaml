@@ -1,0 +1,7 @@
+database:
+    driver: pdo_pgsql
+    dbname: ork_crom
+    host: 127.0.0.1
+    port: 5432
+    user: ork_crom
+    password: ork_crom

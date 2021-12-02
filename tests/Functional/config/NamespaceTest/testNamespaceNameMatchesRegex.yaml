@@ -1,0 +1,11 @@
+scanners:
+    -
+        label: beginsWithS
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesRegex, pattern: /^s/i }
+    -
+        label: endsWithCheddar
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesRegex, pattern: /cheddar$/i }

@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS new_york;
+DROP TABLE IF EXISTS alaska;

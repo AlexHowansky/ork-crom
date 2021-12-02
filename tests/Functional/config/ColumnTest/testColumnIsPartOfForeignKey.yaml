@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: partOfFkey
+        scanner: column
+        assertions:
+            - { assertion: columnIsPartOfForeignKey }

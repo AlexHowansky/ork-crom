@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+if ($argc !== 2) {
+    echo "json2yaml <file>\n";
+    exit(1);
+}
+
+if (file_exists($argv[1]) === false) {
+    echo "No such file.\n";
+    exit(1);
+}
+
+$data = json_decode(file_get_contents($argv[1]), true);
+
+if ($data === null) {
+    echo "JSON can not be decoded.\n";
+    exit(1);
+}
+
+echo Yaml::dump($data, 4);
