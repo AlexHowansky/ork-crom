@@ -15,7 +15,7 @@ use Ork\Crom\Assertion\AbstractAssertion;
 use Ork\Crom\Asset\ColumnAsset;
 
 /**
- * Assertion to verify that a column has a default value.
+ * Assertion to verify that a column has a given type.
  */
 class ColumnHasTypeAssertion extends AbstractAssertion
 {
