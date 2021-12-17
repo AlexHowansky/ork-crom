@@ -80,8 +80,10 @@ class DebugHandler extends Handler
         printf("  namespace: %s\n", $table->getNamespaceName());
         printf("  table: %s\n", $table->getShortestName($table->getNamespaceName()));
         echo "  primary key columns:\n";
-        foreach ($table->getPrimaryKeyColumns() as $column) {
-            printf("    %s [%s]\n", $column->getName(), $column->getType()->getName());
+        if ($table->hasPrimaryKey() === true) {
+            foreach ($table->getPrimaryKeyColumns() as $column) {
+                printf("    %s [%s]\n", $column->getName(), $column->getType()->getName());
+            }
         }
         echo "  foreign keys:\n";
         foreach ($table->getForeignKeys() as $fkey) {
