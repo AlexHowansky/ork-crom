@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: length 10
+        scanner: column
+        assertions:
+            - { assertion: columnHasLength, length: 10 }
