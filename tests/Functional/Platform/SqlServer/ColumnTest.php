@@ -1,6 +1,6 @@
 <?php
 
-namespace Ork\Crom\Tests\Functional\MariaDb;
+namespace Ork\Crom\Tests\Functional\Platform\SqlServer;
 
 use Ork\Crom\Tests\Functional\AbstractFunctionalTestCase;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnHasDefaultTrait;

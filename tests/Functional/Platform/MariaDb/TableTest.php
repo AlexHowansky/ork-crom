@@ -1,6 +1,6 @@
 <?php
 
-namespace Ork\Crom\Tests\Functional\SqlServer;
+namespace Ork\Crom\Tests\Functional\Platform\MariaDb;
 
 use Ork\Crom\Tests\Functional\AbstractFunctionalTestCase;
 use Ork\Crom\Tests\Functional\Assertion\Table\TableHasPrimaryKeyTrait;

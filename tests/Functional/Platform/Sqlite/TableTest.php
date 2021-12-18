@@ -1,6 +1,6 @@
 <?php
 
-namespace Ork\Crom\Tests\Functional\Sqlite;
+namespace Ork\Crom\Tests\Functional\Platform\Sqlite;
 
 use Ork\Crom\Tests\Functional\AbstractFunctionalTestCase;
 use Ork\Crom\Tests\Functional\Assertion\Table\TableHasPrimaryKeyTrait;
