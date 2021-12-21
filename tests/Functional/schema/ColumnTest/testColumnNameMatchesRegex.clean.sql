@@ -1,2 +1,3 @@
-DROP TABLE IF EXISTS gloomhaven;
-DROP TABLE IF EXISTS roborally;
+DROP TABLE IF EXISTS gloomhaven
+
+DROP TABLE IF EXISTS roborally

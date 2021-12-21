@@ -2,13 +2,13 @@ CREATE TABLE owners (
     owner_id INT NOT NULL,
     age INT NOT NULL DEFAULT 0,
     PRIMARY KEY (owner_id)
-);
+)
 
 CREATE TABLE tires (
     tire_id INT NOT NULL,
     tire_name VARCHAR(64) NOT NULL,
     PRIMARY KEY (tire_id, tire_name)
-);
+)
 
 CREATE TABLE cars (
     car_id INT NOT NULL,
@@ -19,4 +19,4 @@ CREATE TABLE cars (
     PRIMARY KEY (car_id),
     FOREIGN KEY (car_tire_id, car_tire_name) REFERENCES tires (tire_id, tire_name),
     FOREIGN KEY (car_owner_id) REFERENCES owners (owner_id)
-);
+)

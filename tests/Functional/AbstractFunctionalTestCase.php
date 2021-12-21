@@ -14,24 +14,13 @@ abstract class AbstractFunctionalTestCase extends TestCase
     protected Scan $scan;
 
     /**
-     * SQLServer is strange -- it does not allow more than one schema to be
-     * created in a single statement. Multiples can be dropped, but only one
-     * created. If we encounter this situation, we'll split the string into
-     * separate statements and execute each individually.
+     * Some databases don't support multiple statements in a single execution,
+     * so we'll split on empty lines and execute each individually.
      */
     protected function executeStatement(string $statement): void
     {
-        $conn = $this->scan->getConnection();
-        if (
-            stripos($statement, 'CREATE SCHEMA') !== false &&
-            $conn->getDatabasePlatform()->getName() === 'mssql'
-        ) {
-            $statements = preg_split('/;\n+/', trim($statement, ";\n"));
-        } else {
-            $statements = [$statement];
-        }
-        foreach ($statements as $statement) {
-            $conn->executeStatement($statement);
+        foreach (preg_split('/\n\n+/', $statement) as $statement) {
+            $this->scan->getConnection()->executeStatement($statement);
         }
     }
 
