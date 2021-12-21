@@ -2,26 +2,24 @@
 
 namespace Ork\Crom\Tests\Functional\Assertion\Table;
 
-use Psr\Log\LogLevel;
-
 trait TableNameMatchesCaseSensitiveTrait
 {
 
     public function testTableNameMatchesCase(): void
     {
         $this->test([
-            ['macro', 'TOMATO_CAN', LogLevel::NOTICE],
-            ['macro', 'green_bottle', LogLevel::ERROR],
-            ['macro', 'logoCircle', LogLevel::ERROR],
-            ['macro', 'SweetGarden', LogLevel::ERROR],
-            ['snake', 'TOMATO_CAN', LogLevel::ERROR],
-            ['snake', 'green_bottle', LogLevel::NOTICE],
-            ['snake', 'logoCircle', LogLevel::ERROR],
-            ['snake', 'SweetGarden', LogLevel::ERROR],
-            ['camel', 'TOMATO_CAN', LogLevel::ERROR],
-            ['camel', 'green_bottle', LogLevel::ERROR],
-            ['camel', 'logoCircle', LogLevel::NOTICE],
-            ['camel', 'SweetGarden', LogLevel::ERROR],
+            ['macro', 'TOMATO_CAN', true],
+            ['macro', 'green_bottle', false],
+            ['macro', 'logoCircle', false],
+            ['macro', 'SweetGarden', false],
+            ['snake', 'TOMATO_CAN', false],
+            ['snake', 'green_bottle', true],
+            ['snake', 'logoCircle', false],
+            ['snake', 'SweetGarden', false],
+            ['camel', 'TOMATO_CAN', false],
+            ['camel', 'green_bottle', false],
+            ['camel', 'logoCircle', true],
+            ['camel', 'SweetGarden', false],
         ]);
     }
 

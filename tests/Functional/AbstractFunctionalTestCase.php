@@ -4,6 +4,7 @@ namespace Ork\Crom\Tests\Functional;
 
 use Monolog\Handler\TestHandler;
 use Ork\Crom\Scan;
+use Ork\Crom\Scanner\AbstractScanner;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use RuntimeException;
@@ -103,7 +104,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
         $this->scan->pushHandler($log);
         ($this->scan)();
         $assertionName = lcfirst(preg_replace('/^test/', '', $this->getName(false)));
-        foreach ($tests as [$scannerLabel, $assetName, $level]) {
+        foreach ($tests as [$scannerLabel, $assetName, $shouldPass]) {
             $this->assertTrue(
                 $log->hasRecordThatPasses(
                     function (array $record) use ($scannerLabel, $assetName, $assertionName) {
@@ -111,14 +112,14 @@ abstract class AbstractFunctionalTestCase extends TestCase
                             $record['context']['asset']->getName() === $assetName &&
                             $record['context']['assertion']->getName() === $assertionName;
                     },
-                    $level
+                    $shouldPass === true ? AbstractScanner::LOG_LEVEL_PASS : AbstractScanner::LOG_LEVEL_FAIL
                 ),
                 sprintf(
-                    "Unable to find log record matching:\n\nscanner: %s\nasset: %s\nassertion: %s\nlevel: %s\n",
+                    "Unable to find log record matching:\n\nscanner: %s\nasset: %s\nassertion: %s\npass: %s\n",
                     $scannerLabel,
                     $assetName,
                     $assertionName,
-                    $level
+                    $shouldPass ? 'true' : 'fail'
                 )
             );
         }

@@ -10,14 +10,14 @@ trait ColumnNameMatchesRegexTrait
     public function testColumnNameMatchesRegex(): void
     {
         $this->test([
-            ['underscore', 'azul', LogLevel::ERROR],
-            ['underscore', 'terraforming_mars', LogLevel::NOTICE],
-            ['underscore', 'cosmic_encounter', LogLevel::NOTICE],
-            ['underscore', 'scythe', LogLevel::ERROR],
-            ['short', 'azul', LogLevel::NOTICE],
-            ['short', 'terraforming_mars', LogLevel::ERROR],
-            ['short', 'cosmic_encounter', LogLevel::ERROR],
-            ['short', 'scythe', LogLevel::NOTICE],
+            ['underscore', 'azul', false],
+            ['underscore', 'terraforming_mars', true],
+            ['underscore', 'cosmic_encounter', true],
+            ['underscore', 'scythe', false],
+            ['short', 'azul', true],
+            ['short', 'terraforming_mars', false],
+            ['short', 'cosmic_encounter', false],
+            ['short', 'scythe', true],
         ]);
     }
 

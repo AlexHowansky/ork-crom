@@ -10,9 +10,9 @@ trait ColumnIsAutoincrementTrait
     public function testColumnIsAutoincrement(): void
     {
         $this->test([
-            ['autoinc', 'green', LogLevel::NOTICE],
-            ['autoinc', 'yellow', LogLevel::ERROR],
-            ['autoinc', 'blue', LogLevel::ERROR],
+            ['autoinc', 'green', true],
+            ['autoinc', 'yellow', false],
+            ['autoinc', 'blue', false],
         ]);
     }
 

@@ -10,11 +10,11 @@ trait ColumnIsPartOfPrimaryKeyTrait
     public function testColumnIsPartOfPrimaryKey(): void
     {
         $this->test([
-            ['partOfPkey', 'almond_joy', LogLevel::NOTICE],
-            ['partOfPkey', 'three_musketeers', LogLevel::NOTICE],
-            ['partOfPkey', 'warheads', LogLevel::ERROR],
-            ['partOfPkey', 'twix', LogLevel::NOTICE],
-            ['partOfPkey', 'necco', LogLevel::ERROR],
+            ['partOfPkey', 'almond_joy', true],
+            ['partOfPkey', 'three_musketeers', true],
+            ['partOfPkey', 'warheads', false],
+            ['partOfPkey', 'twix', true],
+            ['partOfPkey', 'necco', false],
         ]);
     }
 

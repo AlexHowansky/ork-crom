@@ -18,6 +18,7 @@ use Ork\Crom\Assertion\AssertionInterface;
 use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Progress\ProgressInterface;
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 use ReflectionClass;
 use RuntimeException;
 
@@ -26,6 +27,9 @@ use RuntimeException;
  */
 abstract class AbstractScanner implements ScannerInterface
 {
+
+    public const LOG_LEVEL_FAIL = LogLevel::ERROR;
+    public const LOG_LEVEL_PASS = LogLevel::NOTICE;
 
     /**
      * Constructor.
@@ -222,7 +226,8 @@ abstract class AbstractScanner implements ScannerInterface
                 );
                 $assertion($asset);
                 $this->getProgress()->pass($this, $asset, $assertion);
-                $this->getLogger()->notice(
+                $this->getLogger()->log(
+                    self::LOG_LEVEL_PASS,
                     sprintf(
                         '%s asset "%s" passed assertion %s',
                         $this->getName(),
@@ -237,7 +242,8 @@ abstract class AbstractScanner implements ScannerInterface
                 );
             } catch (AssertionException $e) {
                 $this->getProgress()->fail($this, $asset, $assertion);
-                $this->getLogger()->error(
+                $this->getLogger()->log(
+                    self::LOG_LEVEL_FAIL,
                     sprintf(
                         '%s asset "%s" failed assertion %s',
                         $this->getName(),

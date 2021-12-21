@@ -10,18 +10,18 @@ trait ColumnHasDefaultTrait
     public function testColumnHasDefault(): void
     {
         $this->test([
-            ['anyDefault', 'spain', LogLevel::NOTICE],
-            ['anyDefault', 'france', LogLevel::ERROR],
-            ['anyDefault', 'vietnam', LogLevel::NOTICE],
-            ['anyDefault', 'laos', LogLevel::NOTICE],
-            ['zeroDefault', 'spain', LogLevel::NOTICE],
-            ['zeroDefault', 'france', LogLevel::ERROR],
-            ['zeroDefault', 'vietnam', LogLevel::ERROR],
-            ['zeroDefault', 'laos', LogLevel::ERROR],
-            ['fooDefault', 'spain', LogLevel::ERROR],
-            ['fooDefault', 'france', LogLevel::ERROR],
-            ['fooDefault', 'vietnam', LogLevel::NOTICE],
-            ['fooDefault', 'laos', LogLevel::ERROR],
+            ['anyDefault', 'spain', true],
+            ['anyDefault', 'france', false],
+            ['anyDefault', 'vietnam', true],
+            ['anyDefault', 'laos', true],
+            ['zeroDefault', 'spain', true],
+            ['zeroDefault', 'france', false],
+            ['zeroDefault', 'vietnam', false],
+            ['zeroDefault', 'laos', false],
+            ['fooDefault', 'spain', false],
+            ['fooDefault', 'france', false],
+            ['fooDefault', 'vietnam', true],
+            ['fooDefault', 'laos', false],
         ]);
     }
 
