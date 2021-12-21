@@ -2,8 +2,6 @@
 
 namespace Ork\Crom\Tests\Functional\Assertion\Namespace;
 
-use Psr\Log\LogLevel;
-
 trait NamespaceNameMatchesRegexTrait
 {
 

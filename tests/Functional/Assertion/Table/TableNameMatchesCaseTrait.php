@@ -2,7 +2,7 @@
 
 namespace Ork\Crom\Tests\Functional\Assertion\Table;
 
-trait TableNameMatchesCaseSensitiveTrait
+trait TableNameMatchesCaseTrait
 {
 
     public function testTableNameMatchesCase(): void

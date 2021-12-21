@@ -2,8 +2,6 @@
 
 namespace Ork\Crom\Tests\Functional\Assertion\Column;
 
-use Psr\Log\LogLevel;
-
 trait ColumnNameMatchesRegexTrait
 {
 

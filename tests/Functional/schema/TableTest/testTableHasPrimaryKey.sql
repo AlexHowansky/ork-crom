@@ -1,12 +1,12 @@
-CREATE TABLE willow_popper (
+CREATE TABLE Willow_Popper (
     id INT PRIMARY KEY
 )
 
-CREATE TABLE tower_cube (
+CREATE TABLE Tower_Cube (
     id INT
 )
 
-CREATE TABLE mask_glass (
+CREATE TABLE Mask_Glass (
     id1 INT,
     id2 INT,
     PRIMARY KEY (id1, id2)
