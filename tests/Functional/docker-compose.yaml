@@ -20,6 +20,16 @@ services:
             MYSQL_USER: ork_crom
             MYSQL_PASSWORD: ork_crom
             MYSQL_RANDOM_ROOT_PASSWORD: 1
+    oracle:
+        image: gvenzl/oracle-xe:21-slim
+        restart: always
+        ports:
+            - 1521:1521
+        environment:
+            APP_USER: ork_crom
+            APP_USER_PASSWORD: ork_crom
+            ORACLE_DATABASE: ork_crom
+            ORACLE_RANDOM_PASSWORD: 'yes'
     postgres:
         image: postgres:14
         restart: always

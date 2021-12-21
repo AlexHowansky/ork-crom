@@ -1,0 +1,8 @@
+database:
+    driver: oci8
+    service: true
+    servicename: ork_crom
+    host: localhost
+    port: 1521
+    user: ork_crom
+    password: ork_crom

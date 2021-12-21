@@ -37,7 +37,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
     protected function executeStatement(string $statement): void
     {
         foreach (preg_split('/\n\n+/', $statement) as $statement) {
-            $this->scan->getConnection()->executeStatement($statement);
+            $this->scan->getConnection()->executeStatement($this->platformify($statement));
         }
     }
 
@@ -98,6 +98,21 @@ abstract class AbstractFunctionalTestCase extends TestCase
             throw new RuntimeException(sprintf('Missing required test config file %s', $file));
         }
         return $file;
+    }
+
+    /**
+     * We'll intercept `DROP TABLE` statements here and adjust them for Oracle
+     * because there's no `IF EXISTS` clause on that platform.
+     */
+    protected function platformify(string $sql): string
+    {
+        if (
+            $this->scan->getConnection()->getDatabasePlatform() instanceof OraclePlatform === true &&
+            preg_match('/^DROP\s+TABLE\s+IF\s+EXISTS\s+(.+)$/', $sql, $match) === 1
+        ) {
+            return sprintf("BEGIN EXECUTE IMMEDIATE 'DROP TABLE %s'; EXCEPTION WHEN OTHERS THEN NULL; END;", $match[1]);
+        }
+        return $sql;
     }
 
     public function setUp(): void
