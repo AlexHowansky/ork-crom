@@ -10,14 +10,14 @@ trait TableNameMatchesRegexTrait
     public function testTableNameMatchesRegex(): void
     {
         $this->test([
-            ['dragon', 'basilisk', LogLevel::ERROR],
-            ['dragon', 'dragons', LogLevel::ERROR],
-            ['dragon', 'dragon_rider', LogLevel::NOTICE],
-            ['dragon', 'dragon_horde', LogLevel::NOTICE],
-            ['nodash', 'basilisk', LogLevel::NOTICE],
-            ['nodash', 'dragons', LogLevel::NOTICE],
-            ['nodash', 'dragon_rider', LogLevel::ERROR],
-            ['nodash', 'dragon_horde', LogLevel::ERROR],
+            ['startsWithDragon', 'Basilisk', LogLevel::ERROR],
+            ['startsWithDragon', 'Dragons', LogLevel::ERROR],
+            ['startsWithDragon', 'Dragon_Rider', LogLevel::NOTICE],
+            ['startsWithDragon', 'DRAGON_HORDE', LogLevel::NOTICE],
+            ['noUnderscore', 'Basilisk', LogLevel::NOTICE],
+            ['noUnderscore', 'Dragons', LogLevel::NOTICE],
+            ['noUnderscore', 'Dragon_Rider', LogLevel::ERROR],
+            ['noUnderscore', 'DRAGON_HORDE', LogLevel::ERROR],
         ]);
     }
 

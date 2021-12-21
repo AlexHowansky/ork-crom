@@ -4,7 +4,7 @@ namespace Ork\Crom\Tests\Functional\Assertion\Table;
 
 use Psr\Log\LogLevel;
 
-trait TableNameMatchesCaseInsensitiveTrait
+trait TableNameMatchesCaseForcedLowerTrait
 {
 
     public function testTableNameMatchesCase(): void

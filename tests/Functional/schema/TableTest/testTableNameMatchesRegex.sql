@@ -1,15 +1,15 @@
-CREATE TABLE basilisk (
+CREATE TABLE Basilisk (
     id INT
 )
 
-CREATE TABLE dragons (
+CREATE TABLE Dragons (
     id INT
 )
 
-CREATE TABLE dragon_rider (
+CREATE TABLE Dragon_Rider (
     id INT
 )
 
-CREATE TABLE dragon_horde (
+CREATE TABLE DRAGON_HORDE (
     id INT
 )

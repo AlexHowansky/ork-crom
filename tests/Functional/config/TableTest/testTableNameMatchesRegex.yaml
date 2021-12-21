@@ -1,11 +1,11 @@
 scanners:
     -
-        label: dragon
+        label: startsWithDragon
         scanner: table
         assertions:
             - { assertion: tableNameMatchesRegex, pattern: /^dragon_/i }
     -
-        label: nodash
+        label: noUnderscore
         scanner: table
         assertions:
             - { assertion: tableNameMatchesRegex, pattern: /^[^_]+$/ }
