@@ -1,6 +1,6 @@
 scanners:
     -
-        label: autoinc
+        label: isAutoincrement
         scanner: column
         assertions:
             - { assertion: columnIsAutoincrement }

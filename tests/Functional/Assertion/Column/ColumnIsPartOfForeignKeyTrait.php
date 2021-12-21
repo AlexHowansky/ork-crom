@@ -10,15 +10,15 @@ trait ColumnIsPartOfForeignKeyTrait
     public function testColumnIsPartOfForeignKey(): void
     {
         $this->test([
-            ['partOfFkey', 'owner_id', false],
-            ['partOfFkey', 'age', false],
-            ['partOfFkey', 'tire_id', false],
-            ['partOfFkey', 'tire_name', false],
-            ['partOfFkey', 'car_id', false],
-            ['partOfFkey', 'car_owner_id', true],
-            ['partOfFkey', 'car_tire_id', true],
-            ['partOfFkey', 'car_tire_name', true],
-            ['partOfFkey', 'spin', false],
+            ['isPartOfFkey', 'owner_id', false],
+            ['isPartOfFkey', 'age', false],
+            ['isPartOfFkey', 'tire_id', false],
+            ['isPartOfFkey', 'tire_name', false],
+            ['isPartOfFkey', 'car_id', false],
+            ['isPartOfFkey', 'car_owner_id', true],
+            ['isPartOfFkey', 'car_tire_id', true],
+            ['isPartOfFkey', 'car_tire_name', true],
+            ['isPartOfFkey', 'spin', false],
         ]);
     }
 

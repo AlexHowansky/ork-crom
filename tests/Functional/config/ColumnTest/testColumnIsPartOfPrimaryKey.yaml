@@ -1,6 +1,6 @@
 scanners:
     -
-        label: partOfPkey
+        label: isPartOfPkey
         scanner: column
         assertions:
             - { assertion: columnIsPartOfPrimaryKey }

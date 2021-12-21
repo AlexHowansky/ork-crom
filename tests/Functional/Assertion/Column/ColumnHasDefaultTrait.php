@@ -10,18 +10,18 @@ trait ColumnHasDefaultTrait
     public function testColumnHasDefault(): void
     {
         $this->test([
-            ['anyDefault', 'spain', true],
-            ['anyDefault', 'france', false],
-            ['anyDefault', 'vietnam', true],
-            ['anyDefault', 'laos', true],
-            ['zeroDefault', 'spain', true],
-            ['zeroDefault', 'france', false],
-            ['zeroDefault', 'vietnam', false],
-            ['zeroDefault', 'laos', false],
-            ['fooDefault', 'spain', false],
-            ['fooDefault', 'france', false],
-            ['fooDefault', 'vietnam', true],
-            ['fooDefault', 'laos', false],
+            ['hasAnyDefault', 'spain', true],
+            ['hasAnyDefault', 'france', false],
+            ['hasAnyDefault', 'vietnam', true],
+            ['hasAnyDefault', 'laos', true],
+            ['hasZeroDefault', 'spain', true],
+            ['hasZeroDefault', 'france', false],
+            ['hasZeroDefault', 'vietnam', false],
+            ['hasZeroDefault', 'laos', false],
+            ['hasFooDefault', 'spain', false],
+            ['hasFooDefault', 'france', false],
+            ['hasFooDefault', 'vietnam', true],
+            ['hasFooDefault', 'laos', false],
         ]);
     }
 

@@ -1,16 +1,16 @@
 scanners:
     -
-        label: macro
+        label: macroCase
         scanner: column
         assertions:
             - { assertion: columnNameMatchesCase, strategy: macro }
     -
-        label: snake
+        label: snakeCase
         scanner: column
         assertions:
             - { assertion: columnNameMatchesCase, strategy: snake }
     -
-        label: camel
+        label: camelCase
         scanner: column
         assertions:
             - { assertion: columnNameMatchesCase, strategy: camel }

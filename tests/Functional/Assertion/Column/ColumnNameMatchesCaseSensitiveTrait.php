@@ -10,18 +10,18 @@ trait ColumnNameMatchesCaseSensitiveTrait
     public function testColumnNameMatchesCase(): void
     {
         $this->test([
-            ['macro', 'ICE_COLD', true],
-            ['macro', 'axe_murderer', false],
-            ['macro', 'lastEmperor', false],
-            ['macro', 'KoreanZombie', false],
-            ['snake', 'ICE_COLD', false],
-            ['snake', 'axe_murderer', true],
-            ['snake', 'lastEmperor', false],
-            ['snake', 'KoreanZombie', false],
-            ['camel', 'ICE_COLD', false],
-            ['camel', 'axe_murderer', false],
-            ['camel', 'lastEmperor', true],
-            ['camel', 'KoreanZombie', false],
+            ['macroCase', 'ICE_COLD', true],
+            ['macroCase', 'axe_murderer', false],
+            ['macroCase', 'lastEmperor', false],
+            ['macroCase', 'KoreanZombie', false],
+            ['snakeCase', 'ICE_COLD', false],
+            ['snakeCase', 'axe_murderer', true],
+            ['snakeCase', 'lastEmperor', false],
+            ['snakeCase', 'KoreanZombie', false],
+            ['camelCase', 'ICE_COLD', false],
+            ['camelCase', 'axe_murderer', false],
+            ['camelCase', 'lastEmperor', true],
+            ['camelCase', 'KoreanZombie', false],
         ]);
     }
 

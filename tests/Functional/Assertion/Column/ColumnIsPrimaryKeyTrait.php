@@ -10,10 +10,10 @@ trait ColumnIsPrimaryKeyTrait
     public function testColumnIsPrimaryKey(): void
     {
         $this->test([
-            ['pkey', 'peanuts', true],
-            ['pkey', 'mars', false],
-            ['pkey', 'gummy_bears', false],
-            ['pkey', 'starburst', false],
+            ['isPkey', 'peanuts', true],
+            ['isPkey', 'mars', false],
+            ['isPkey', 'gummy_bears', false],
+            ['isPkey', 'starburst', false],
         ]);
     }
 

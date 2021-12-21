@@ -1,6 +1,6 @@
 scanners:
     -
-        label: pkey
+        label: hasPkey
         scanner: table
         assertions:
             - { assertion: tableHasPrimaryKey }

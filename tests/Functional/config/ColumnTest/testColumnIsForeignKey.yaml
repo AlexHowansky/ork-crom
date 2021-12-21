@@ -1,6 +1,6 @@
 scanners:
     -
-        label: fkey
+        label: isFkey
         scanner: column
         assertions:
             - { assertion: columnIsForeignKey }

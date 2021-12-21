@@ -1,6 +1,6 @@
 scanners:
     -
-        label: nullable
+        label: isNullable
         scanner: column
         assertions:
             - { assertion: columnIsNullable }

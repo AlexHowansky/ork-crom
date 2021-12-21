@@ -8,18 +8,18 @@ trait TableNameMatchesCaseForcedUpperTrait
     public function testTableNameMatchesCase(): void
     {
         $this->test([
-            ['macro', 'TOMATO_CAN', true],
-            ['macro', 'GREEN_BOTTLE', true],
-            ['macro', 'LOGOCIRCLE', true],
-            ['macro', 'SWEETGARDEN', true],
-            ['snake', 'TOMATO_CAN', false],
-            ['snake', 'GREEN_BOTTLE', false],
-            ['snake', 'LOGOCIRCLE', false],
-            ['snake', 'SWEETGARDEN', false],
-            ['camel', 'TOMATO_CAN', false],
-            ['camel', 'GREEN_BOTTLE', false],
-            ['camel', 'LOGOCIRCLE', false],
-            ['camel', 'SWEETGARDEN', false],
+            ['macroCase', 'TOMATO_CAN', true],
+            ['macroCase', 'GREEN_BOTTLE', true],
+            ['macroCase', 'LOGOCIRCLE', true],
+            ['macroCase', 'SWEETGARDEN', true],
+            ['snakeCase', 'TOMATO_CAN', false],
+            ['snakeCase', 'GREEN_BOTTLE', false],
+            ['snakeCase', 'LOGOCIRCLE', false],
+            ['snakeCase', 'SWEETGARDEN', false],
+            ['camelCase', 'TOMATO_CAN', false],
+            ['camelCase', 'GREEN_BOTTLE', false],
+            ['camelCase', 'LOGOCIRCLE', false],
+            ['camelCase', 'SWEETGARDEN', false],
         ]);
     }
 

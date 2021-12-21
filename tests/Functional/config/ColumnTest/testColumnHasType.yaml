@@ -1,16 +1,16 @@
 scanners:
     -
-        label: integer
+        label: hasTypeInteger
         scanner: column
         assertions:
             - { assertion: columnHasType, type: integer }
     -
-        label: string
+        label: hasTypeString
         scanner: column
         assertions:
             - { assertion: columnHasType, type: string }
     -
-        label: date
+        label: hasTypeDate
         scanner: column
         assertions:
             - { assertion: columnHasType, type: date }

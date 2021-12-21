@@ -10,12 +10,12 @@ trait ColumnHasLengthTrait
     public function testColumnHasLength(): void
     {
         $this->test([
-            ['length 10', 'celica', false],
-            ['length 10', 'prius', true],
-            ['length 10', 'highlander', true],
-            ['length 10', 'rabbit', false],
-            ['length 10', 'beetle', false],
-            ['length 10', 'jetta', false],
+            ['hasLength10', 'celica', false],
+            ['hasLength10', 'prius', true],
+            ['hasLength10', 'highlander', true],
+            ['hasLength10', 'rabbit', false],
+            ['hasLength10', 'beetle', false],
+            ['hasLength10', 'jetta', false],
         ]);
     }
 

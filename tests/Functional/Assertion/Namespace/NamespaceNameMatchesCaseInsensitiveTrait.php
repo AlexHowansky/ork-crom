@@ -10,18 +10,18 @@ trait NamespaceNameMatchesCaseInsensitiveTrait
     public function testNamespaceNameMatchesCase(): void
     {
         $this->test([
-            ['macro', 'focal_banger', false],
-            ['macro', 'choppin_broccoli', false],
-            ['macro', 'lalunarosa', false],
-            ['macro', 'bumblefetish', false],
-            ['snake', 'focal_banger', true],
-            ['snake', 'choppin_broccoli', true],
-            ['snake', 'lalunarosa', true],
-            ['snake', 'bumblefetish', true],
-            ['camel', 'focal_banger', false],
-            ['camel', 'choppin_broccoli', false],
-            ['camel', 'lalunarosa', true],
-            ['camel', 'bumblefetish', true],
+            ['macroCase', 'focal_banger', false],
+            ['macroCase', 'choppin_broccoli', false],
+            ['macroCase', 'lalunarosa', false],
+            ['macroCase', 'bumblefetish', false],
+            ['snakeCase', 'focal_banger', true],
+            ['snakeCase', 'choppin_broccoli', true],
+            ['snakeCase', 'lalunarosa', true],
+            ['snakeCase', 'bumblefetish', true],
+            ['camelCase', 'focal_banger', false],
+            ['camelCase', 'choppin_broccoli', false],
+            ['camelCase', 'lalunarosa', true],
+            ['camelCase', 'bumblefetish', true],
         ]);
     }
 

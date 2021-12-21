@@ -10,15 +10,15 @@ trait ColumnIsForeignKeyTrait
     public function testColumnIsForeignKey(): void
     {
         $this->test([
-            ['fkey', 'customer_id', false],
-            ['fkey', 'score', false],
-            ['fkey', 'state_id', false],
-            ['fkey', 'state_name', false],
-            ['fkey', 'invoice_id', false],
-            ['fkey', 'invoice_customer_id', true],
-            ['fkey', 'invoice_state_id', false],
-            ['fkey', 'invoice_state_name', false],
-            ['fkey', 'total', false],
+            ['isFkey', 'customer_id', false],
+            ['isFkey', 'score', false],
+            ['isFkey', 'state_id', false],
+            ['isFkey', 'state_name', false],
+            ['isFkey', 'invoice_id', false],
+            ['isFkey', 'invoice_customer_id', true],
+            ['isFkey', 'invoice_state_id', false],
+            ['isFkey', 'invoice_state_name', false],
+            ['isFkey', 'total', false],
         ]);
     }
 

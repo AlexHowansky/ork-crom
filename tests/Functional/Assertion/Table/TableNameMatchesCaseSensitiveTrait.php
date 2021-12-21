@@ -8,18 +8,18 @@ trait TableNameMatchesCaseSensitiveTrait
     public function testTableNameMatchesCase(): void
     {
         $this->test([
-            ['macro', 'TOMATO_CAN', true],
-            ['macro', 'green_bottle', false],
-            ['macro', 'logoCircle', false],
-            ['macro', 'SweetGarden', false],
-            ['snake', 'TOMATO_CAN', false],
-            ['snake', 'green_bottle', true],
-            ['snake', 'logoCircle', false],
-            ['snake', 'SweetGarden', false],
-            ['camel', 'TOMATO_CAN', false],
-            ['camel', 'green_bottle', false],
-            ['camel', 'logoCircle', true],
-            ['camel', 'SweetGarden', false],
+            ['macroCase', 'TOMATO_CAN', true],
+            ['macroCase', 'green_bottle', false],
+            ['macroCase', 'logoCircle', false],
+            ['macroCase', 'SweetGarden', false],
+            ['snakeCase', 'TOMATO_CAN', false],
+            ['snakeCase', 'green_bottle', true],
+            ['snakeCase', 'logoCircle', false],
+            ['snakeCase', 'SweetGarden', false],
+            ['camelCase', 'TOMATO_CAN', false],
+            ['camelCase', 'green_bottle', false],
+            ['camelCase', 'logoCircle', true],
+            ['camelCase', 'SweetGarden', false],
         ]);
     }
 

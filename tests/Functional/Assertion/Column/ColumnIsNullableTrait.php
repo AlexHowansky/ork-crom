@@ -10,10 +10,10 @@ trait ColumnIsNullableTrait
     public function testColumnIsNullable(): void
     {
         $this->test([
-            ['nullable', 'five_guys', false],
-            ['nullable', 'burger_fi', true],
-            ['nullable', 'sonic', true],
-            ['nullable', 'in_and_out', false],
+            ['isNullable', 'five_guys', false],
+            ['isNullable', 'burger_fi', true],
+            ['isNullable', 'sonic', true],
+            ['isNullable', 'in_and_out', false],
         ]);
     }
 

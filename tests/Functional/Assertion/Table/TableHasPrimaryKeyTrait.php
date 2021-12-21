@@ -8,9 +8,9 @@ trait TableHasPrimaryKeyTrait
     public function testTableHasPrimaryKey(): void
     {
         $this->test([
-            ['pkey', 'willow_popper', true],
-            ['pkey', 'tower_cube', false],
-            ['pkey', 'mask_glass', true],
+            ['hasPkey', 'willow_popper', true],
+            ['hasPkey', 'tower_cube', false],
+            ['hasPkey', 'mask_glass', true],
         ]);
     }
 
