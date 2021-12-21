@@ -8,14 +8,14 @@ trait ColumnNameMatchesRegexTrait
     public function testColumnNameMatchesRegex(): void
     {
         $this->test([
-            ['containsUnderscore', 'azul', false],
-            ['containsUnderscore', 'terraforming_mars', true],
-            ['containsUnderscore', 'cosmic_encounter', true],
-            ['containsUnderscore', 'scythe', false],
-            ['isShort', 'azul', true],
-            ['isShort', 'terraforming_mars', false],
-            ['isShort', 'cosmic_encounter', false],
-            ['isShort', 'scythe', true],
+            ['containsUnderscore', 'Azul', false],
+            ['containsUnderscore', 'Terraforming_Mars', true],
+            ['containsUnderscore', 'Cosmic_Encounter', true],
+            ['containsUnderscore', 'Scythe', false],
+            ['isShort', 'Azul', true],
+            ['isShort', 'Terraforming_Mars', false],
+            ['isShort', 'Cosmic_Encounter', false],
+            ['isShort', 'Scythe', true],
         ]);
     }
 

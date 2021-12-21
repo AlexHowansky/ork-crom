@@ -1,9 +1,9 @@
-CREATE TABLE gloomhaven (
-    azul INT,
-    terraforming_mars INT
+CREATE TABLE Gloomhaven (
+    Azul INT,
+    Terraforming_Mars INT
 )
 
-CREATE TABLE roborally (
-    cosmic_encounter INT,
-    scythe INT
+CREATE TABLE RoboRally (
+    Cosmic_Encounter INT,
+    Scythe INT
 )

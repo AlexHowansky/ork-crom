@@ -3,15 +3,15 @@
 namespace Ork\Crom\Tests\Functional\Platform\Postgres;
 
 use Ork\Crom\Tests\Functional\AbstractFunctionalTestCase;
-use Ork\Crom\Tests\Functional\Assertion\Table\TableHasPrimaryKeyForcedLowerTrait;
+use Ork\Crom\Tests\Functional\Assertion\Table\TableHasPrimaryKeyTrait;
 use Ork\Crom\Tests\Functional\Assertion\Table\TableNameMatchesCaseForcedLowerTrait;
-use Ork\Crom\Tests\Functional\Assertion\Table\TableNameMatchesRegexForcedLowerTrait;
+use Ork\Crom\Tests\Functional\Assertion\Table\TableNameMatchesRegexTrait;
 
 class TableTest extends AbstractFunctionalTestCase
 {
 
-    use TableHasPrimaryKeyForcedLowerTrait;
+    use TableHasPrimaryKeyTrait;
     use TableNameMatchesCaseForcedLowerTrait;
-    use TableNameMatchesRegexForcedLowerTrait;
+    use TableNameMatchesRegexTrait;
 
 }
