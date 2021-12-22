@@ -12,7 +12,7 @@ use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsNullableTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsPartOfForeignKeyTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsPartOfPrimaryKeyTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsPrimaryKeyTrait;
-use Ork\Crom\Tests\Functional\Assertion\Column\ColumnNameMatchesCaseSensitiveTrait;
+use Ork\Crom\Tests\Functional\Assertion\Column\ColumnNameMatchesCaseTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnNameMatchesRegexTrait;
 
 class ColumnTest extends AbstractFunctionalTestCase
@@ -27,7 +27,7 @@ class ColumnTest extends AbstractFunctionalTestCase
     use ColumnIsPartOfForeignKeyTrait;
     use ColumnIsPartOfPrimaryKeyTrait;
     use ColumnIsPrimaryKeyTrait;
-    use ColumnNameMatchesCaseSensitiveTrait;
+    use ColumnNameMatchesCaseTrait;
     use ColumnNameMatchesRegexTrait;
 
 }

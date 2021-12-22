@@ -2,7 +2,7 @@
 
 namespace Ork\Crom\Tests\Functional\Assertion\Column;
 
-trait ColumnNameMatchesCaseSensitiveTrait
+trait ColumnNameMatchesCaseTrait
 {
 
     public function testColumnNameMatchesCase(): void
