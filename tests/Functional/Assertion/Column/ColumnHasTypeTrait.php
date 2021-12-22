@@ -25,7 +25,7 @@ trait ColumnHasTypeTrait
             ['hasTypeDate', 'montana', true],
             ['hasTypeDate', 'vermont', false],
             ['hasTypeDate', 'mississippi', false],
-            ['hasTypeDate', 'alabama', false],
+            ['hasTypeDate', 'alabama', true],
         ]);
     }
 

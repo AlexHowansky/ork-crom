@@ -148,7 +148,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
                     $shouldPass === true ? AbstractScanner::LOG_LEVEL_PASS : AbstractScanner::LOG_LEVEL_FAIL
                 ),
                 sprintf(
-                    "Unable to find log record matching:\n\nscanner: %s\nasset: %s\nassertion: %s\npassing: %s\n",
+                    "Unable to find log record matching:\n  scanner: %s\n  asset: %s\n  assertion: %s\n  should pass: %s\n",
                     $scannerLabel,
                     $assetName,
                     $assertionName,

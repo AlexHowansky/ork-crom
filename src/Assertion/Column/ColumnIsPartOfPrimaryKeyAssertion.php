@@ -27,8 +27,7 @@ class ColumnIsPartOfPrimaryKeyAssertion extends AbstractAssertion
      */
     protected function assert(ColumnAsset $asset): bool
     {
-        return $asset->getTable()->hasPrimaryKey() &&
-            array_key_exists($asset->getName(), $asset->getTable()->getPrimaryKeyColumns());
+        return in_array($asset->getName(), $asset->getTable()->getPrimaryKey()?->getColumns() ?? []);
     }
 
 }

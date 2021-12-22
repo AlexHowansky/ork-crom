@@ -7,5 +7,5 @@ CREATE TABLE new_york (
 CREATE TABLE alaska (
     vermont FLOAT,
     mississippi CHAR(8),
-    alabama TIME
+    alabama DATE
 )
