@@ -16,6 +16,13 @@
 |[`columnNameMatchesCase`](Assertions/Column/ColumnNameMatchesCase.md)|Asserts that a column name matches a given casing strategy.|
 |[`columnNameMatchesRegex`](Assertions/Column/ColumnNameMatchesRegex.md)|Asserts that a column name matches a given regex pattern.|
 
+# Index Assertions
+
+|Assertion Name|Description|
+|:-|:-|
+|[`indexNameMatchesCase`](Assertions/Index/IndexNameMatchesCase.md)|Asserts that an index name matches a given casing strategy.|
+|[`indexNameMatchesRegex`](Assertions/Index/IndexNameMatchesRegex.md)|Asserts that an index name matches a given regex pattern.|
+
 # Namespace Assertions
 
 |Assertion Name|Description|

@@ -17,9 +17,11 @@ for use in build pipelines.
 
 CROM can scan the following database assets:
 
+* columns
+* indexes
 * namespaces (aka schemas or tablespaces)
 * tables
-* columns
+
 
 ## Assertions
 

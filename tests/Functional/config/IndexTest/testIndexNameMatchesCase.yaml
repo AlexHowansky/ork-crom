@@ -1,0 +1,16 @@
+scanners:
+    -
+        label: macroCase
+        scanner: index
+        assertions:
+            - { assertion: indexNameMatchesCase, strategy: macro }
+    -
+        label: snakeCase
+        scanner: index
+        assertions:
+            - { assertion: indexNameMatchesCase, strategy: snake }
+    -
+        label: camelCase
+        scanner: index
+        assertions:
+            - { assertion: indexNameMatchesCase, strategy: camel }

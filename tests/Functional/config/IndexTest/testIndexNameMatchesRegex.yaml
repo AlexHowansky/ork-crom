@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: containsUnderscore
+        scanner: index
+        assertions:
+            - { assertion: indexNameMatchesRegex, pattern: /_/ }

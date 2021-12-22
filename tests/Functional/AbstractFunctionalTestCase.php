@@ -3,8 +3,6 @@
 namespace Ork\Crom\Tests\Functional;
 
 use Doctrine\DBAL\Platforms\OraclePlatform;
-use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use Exception;
 use Monolog\Handler\TestHandler;
 use Ork\Crom\Scan;
 use Ork\Crom\Scanner\AbstractScanner;
@@ -16,20 +14,6 @@ abstract class AbstractFunctionalTestCase extends TestCase
 {
 
     protected Scan $scan;
-
-    /**
-     * Some platforms force asset names to uppercase, some force to lowercase,
-     * some leave as is.
-     */
-    protected function case(string $assetName): string
-    {
-        $platform = $this->scan->getConnection()->getDatabasePlatform();
-        return match (true) {
-            $platform instanceof OraclePlatform => strtoupper($assetName),
-            $platform instanceof PostgreSQLPlatform => strtolower($assetName),
-            default => $assetName,
-        };
-    }
 
     /**
      * Some databases don't support multiple statements in a single execution,
@@ -140,10 +124,9 @@ abstract class AbstractFunctionalTestCase extends TestCase
             $this->assertTrue(
                 $log->hasRecordThatPasses(
                     function (array $record) use ($scannerLabel, $assetName, $assertionName) {
-                        $assetName = $this->case($assetName);
                         return $record['context']['scanner']->getLabel() === $scannerLabel &&
-                            $record['context']['asset']->getName() === $assetName &&
-                            $record['context']['assertion']->getName() === $assertionName;
+                            $record['context']['assertion']->getName() === $assertionName &&
+                            strcasecmp($record['context']['asset']->getName(), $assetName) === 0;
                     },
                     $shouldPass === true ? AbstractScanner::LOG_LEVEL_PASS : AbstractScanner::LOG_LEVEL_FAIL
                 ),

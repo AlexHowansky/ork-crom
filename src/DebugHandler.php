@@ -14,6 +14,7 @@ namespace Ork\Crom;
 use Monolog\Handler\Handler;
 use Monolog\Logger;
 use Ork\Crom\Asset\ColumnAsset;
+use Ork\Crom\Asset\IndexAsset;
 use Ork\Crom\Asset\NamespaceAsset;
 use Ork\Crom\Asset\TableAsset;
 use RuntimeException;
@@ -49,6 +50,27 @@ class DebugHandler extends Handler
         printf("  precision: %s\n", $column->getPrecision());
         printf("  scale: %s\n", $column->getScale());
         printf("  comment: %s\n", $column->getComment());
+        echo "\n";
+    }
+
+    /**
+     * Dump index information.
+     *
+     * @param IndexAsset $asset The index to dump.
+     *
+     * @return void
+     */
+    protected function dumpIndex(IndexAsset $asset): void
+    {
+        $table = $asset->getTable();
+        $index = $asset->getIndex();
+        echo "index\n";
+        printf("  namespace: %s\n", $table->getNamespaceName());
+        printf("  table: %s\n", $table->getShortestName($table->getNamespaceName()));
+        printf("  index: %s\n", $index->getName());
+        printf("  primary: %s\n", $index->isPrimary() === true ? 'yes' : 'no');
+        printf("  unique: %s\n", $index->isUnique() === true ? 'yes' : 'no');
+        printf("  columns: %s\n", implode(', ', $index->getColumns()));
         echo "\n";
     }
 
@@ -121,6 +143,10 @@ class DebugHandler extends Handler
         switch (get_class($record['context']['asset'])) {
             case ColumnAsset::class:
                 $this->dumpColumn($record['context']['asset']);
+                break;
+
+            case IndexAsset::class:
+                $this->dumpIndex($record['context']['asset']);
                 break;
 
             case NamespaceAsset::class:
