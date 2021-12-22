@@ -12,7 +12,7 @@
 namespace Ork\Crom\Asset;
 
 /**
- * A asset representing a database namespace.
+ * An asset representing a database namespace.
  */
 class NamespaceAsset extends AbstractAsset
 {

@@ -16,8 +16,9 @@ class ColumnAssetTest extends TestCase
         $tableName = md5(random_bytes(32));
         $columnName = md5(random_bytes(32));
         $column = new Column($columnName, new StringType());
-        $table = new Table($tableName);
+        $table = new Table($tableName, [$column]);
         $asset = new ColumnAsset($table, $column);
+        $this->assertSame($column, $table->getColumn($columnName));
         $this->assertSame(sprintf('%s.%s', $tableName, $columnName), $asset->getLabel());
         $this->assertSame($columnName, $asset->getName());
         $this->assertSame($column, $asset->getColumn());

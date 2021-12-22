@@ -14,7 +14,7 @@ namespace Ork\Crom\Asset;
 use Doctrine\DBAL\Schema\Table;
 
 /**
- * A asset representing a database table.
+ * An asset representing a database table.
  */
 class TableAsset extends AbstractAsset
 {

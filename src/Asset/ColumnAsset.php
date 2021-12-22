@@ -15,7 +15,7 @@ use Doctrine\DBAL\Schema\Column;
 use Doctrine\DBAL\Schema\Table;
 
 /**
- * A asset representing a database column.
+ * An asset representing a database column.
  */
 class ColumnAsset extends AbstractAsset
 {
