@@ -1,7 +1,7 @@
-CREATE SCHEMA mild_cheddar
+CREATE SCHEMA Mild_Cheddar
 
-CREATE SCHEMA sharp_cheddar
+CREATE SCHEMA Sharp_Cheddar
 
-CREATE SCHEMA gouda
+CREATE SCHEMA Gouda
 
-CREATE SCHEMA swiss
+CREATE SCHEMA Swiss

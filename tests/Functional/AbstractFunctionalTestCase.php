@@ -4,6 +4,7 @@ namespace Ork\Crom\Tests\Functional;
 
 use Doctrine\DBAL\Platforms\OraclePlatform;
 use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use Exception;
 use Monolog\Handler\TestHandler;
 use Ork\Crom\Scan;
 use Ork\Crom\Scanner\AbstractScanner;
@@ -147,11 +148,11 @@ abstract class AbstractFunctionalTestCase extends TestCase
                     $shouldPass === true ? AbstractScanner::LOG_LEVEL_PASS : AbstractScanner::LOG_LEVEL_FAIL
                 ),
                 sprintf(
-                    "Unable to find log record matching:\n\nscanner: %s\nasset: %s\nassertion: %s\nshould pass: %s\n",
+                    "Unable to find log record matching:\n\nscanner: %s\nasset: %s\nassertion: %s\npassing: %s\n",
                     $scannerLabel,
                     $assetName,
                     $assertionName,
-                    $shouldPass ? 'true' : 'false'
+                    $shouldPass ? 'yes' : 'no'
                 )
             );
         }

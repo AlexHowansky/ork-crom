@@ -8,14 +8,14 @@ trait NamespaceNameMatchesRegexTrait
     public function testNamespaceNameMatchesRegex(): void
     {
         $this->test([
-            ['beginsWithS', 'mild_cheddar', false],
-            ['beginsWithS', 'sharp_cheddar', true],
-            ['beginsWithS', 'gouda', false],
-            ['beginsWithS', 'swiss', true],
-            ['endsWithCheddar', 'mild_cheddar', true],
-            ['endsWithCheddar', 'sharp_cheddar', true],
-            ['endsWithCheddar', 'gouda', false],
-            ['endsWithCheddar', 'swiss', false],
+            ['beginsWithS', 'Mild_Cheddar', false],
+            ['beginsWithS', 'Sharp_Cheddar', true],
+            ['beginsWithS', 'Gouda', false],
+            ['beginsWithS', 'Swiss', true],
+            ['endsWithCheddar', 'Mild_Cheddar', true],
+            ['endsWithCheddar', 'Sharp_Cheddar', true],
+            ['endsWithCheddar', 'Gouda', false],
+            ['endsWithCheddar', 'Swiss', false],
         ]);
     }
 
