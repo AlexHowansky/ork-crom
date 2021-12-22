@@ -96,7 +96,7 @@ class SummaryProgress extends SilentProgress
                         ($type['fail'] ?? 0) > 0 ? 'fail' : 'pass',
                         $type['fail'] ?? 0,
                         $stat,
-                        $this->getAnsiLabel($label, $stat)
+                        $stat === 'assertion' ? $this->getAnsiLabel($label, $stat) : $label
                     )
                 );
             }
