@@ -5,6 +5,7 @@ namespace Ork\Crom\Tests\Functional\Platform\MariaDb;
 use Ork\Crom\Tests\Functional\AbstractFunctionalTestCase;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnHasDefaultTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnHasLengthTrait;
+use Ork\Crom\Tests\Functional\Assertion\Column\ColumnHasLengthAtLeastTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnHasTypeTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsAutoincrementTrait;
 use Ork\Crom\Tests\Functional\Assertion\Column\ColumnIsForeignKeyTrait;
@@ -20,6 +21,7 @@ class ColumnTest extends AbstractFunctionalTestCase
 
     use ColumnHasDefaultTrait;
     use ColumnHasLengthTrait;
+    use ColumnHasLengthAtLeastTrait;
     use ColumnHasTypeTrait;
     use ColumnIsAutoincrementTrait;
     use ColumnIsForeignKeyTrait;

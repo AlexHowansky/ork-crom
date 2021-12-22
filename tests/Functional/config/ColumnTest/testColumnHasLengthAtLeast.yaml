@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: hasLengthAtLeast32
+        scanner: column
+        assertions:
+            - { assertion: columnHasLengthAtLeast, length: 32 }

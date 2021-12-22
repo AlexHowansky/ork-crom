@@ -5,6 +5,7 @@
 |:-|:-|
 |[`columnHasDefault`](Assertions/Column/ColumnHasDefault.md)|Asserts that a column has a default value.|
 |[`columnHasLength`](Assertions/Column/ColumnHasLength.md)|Asserts that a column has a given length.|
+|[`columnHasLengthAtLeast`](Assertions/Column/ColumnHasLengthAtLeast.md)|Asserts that a column has at least a given length.|
 |[`columnHasType`](Assertions/Column/ColumnHasType.md)|Asserts that a column has a given data type.|
 |[`columnIsAutoincrement`](Assertions/Column/ColumnIsAutoincrement.md)|Asserts that a column is automatically incremented.|
 |[`columnIsForeignKey`](Assertions/Column/ColumnIsForeignKey.md)|Asserts that a column is a foreign key.|
