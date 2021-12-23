@@ -8,9 +8,11 @@
 |[`columnHasLengthAtLeast`](Assertions/Column/ColumnHasLengthAtLeast.md)|Asserts that a column has at least a given length.|
 |[`columnHasType`](Assertions/Column/ColumnHasType.md)|Asserts that a column has a given data type.|
 |[`columnIsAutoincrement`](Assertions/Column/ColumnIsAutoincrement.md)|Asserts that a column is automatically incremented.|
+|[`columnIsIndexed`](Assertions/Column/ColumnIsIndexed.md)|Asserts that a column is indexed by itself, or starts an index.|
 |[`columnIsForeignKey`](Assertions/Column/ColumnIsForeignKey.md)|Asserts that a column is a foreign key.|
 |[`columnIsNullable`](Assertions/Column/ColumnIsNullable.md)|Asserts that a column can contain a null value.|
 |[`columnIsPartOfForeignKey`](Assertions/Column/ColumnIsPartOfForeignKey.md)|Asserts that a column is part of a foreign key.|
+|[`columnIsPartOfIndex`](Assertions/Column/ColumnIsPartOfIndex.md)|Asserts that a column is part of an index.|
 |[`columnIsPartOfPrimaryKey`](Assertions/Column/ColumnIsPartOfPrimaryKey.md)|Asserts that a column is part of a primary key.|
 |[`columnIsPrimaryKey`](Assertions/Column/ColumnIsPrimaryKey.md)|Asserts that a column is a primary key.|
 |[`columnNameMatchesCase`](Assertions/Column/ColumnNameMatchesCase.md)|Asserts that a column name matches a given casing strategy.|
