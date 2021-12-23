@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: isPartOfIndex
+        scanner: column
+        assertions:
+            - { assertion: columnIsPartOfIndex }

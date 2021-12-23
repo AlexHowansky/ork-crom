@@ -40,6 +40,16 @@ abstract class AbstractColumnAssertionTestCase extends AbstractAssertionTestCase
         }
     }
 
+    protected function providerGeneratorIndexed(array $cases): Generator
+    {
+        foreach ($cases as [$testColumn, $createColumns, $indexColumns]) {
+            $columns = array_map(fn($name) => new Column($name, new IntegerType()), $createColumns);
+            $table = new Table('foo', $columns);
+            $table->addIndex($indexColumns);
+            yield [new ColumnAsset($table, $table->getColumn($testColumn))];
+        }
+    }
+
     protected function providerGeneratorPrimaryKey(array $cases): Generator
     {
         foreach ($cases as [$testColumn, $createColumns, $keyColumns]) {

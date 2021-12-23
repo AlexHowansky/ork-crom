@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: isIndexed
+        scanner: column
+        assertions:
+            - { assertion: columnIsIndexed }
