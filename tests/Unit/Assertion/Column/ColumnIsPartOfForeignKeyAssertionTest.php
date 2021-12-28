@@ -9,6 +9,7 @@ use Generator;
  * - The name of the column to test against the assertion.
  * - The list of columns to create in the local and foreign tables.
  * - The list of columns to make a foreign key from.
+ * - The optional arguments for the assertion.
  */
 class ColumnIsPartOfForeignKeyAssertionTest extends AbstractColumnAssertionTestCase
 {
@@ -18,13 +19,13 @@ class ColumnIsPartOfForeignKeyAssertionTest extends AbstractColumnAssertionTestC
         yield from $this->providerGeneratorForeignKey([
 
             // No fkey at all.
-            ['foo', ['foo'], []],
+            ['foo', ['foo'], [], []],
 
             // Not part of single-field fkey.
-            ['bar', ['foo', 'bar', 'baz'], ['foo']],
+            ['bar', ['foo', 'bar', 'baz'], ['foo'], []],
 
             // Not part of compound fkey.
-            ['baz', ['foo', 'bar', 'baz'], ['foo', 'bar']],
+            ['baz', ['foo', 'bar', 'baz'], ['foo', 'bar'], []],
 
         ]);
     }
@@ -34,13 +35,13 @@ class ColumnIsPartOfForeignKeyAssertionTest extends AbstractColumnAssertionTestC
         yield from $this->providerGeneratorForeignKey([
 
             // Part of single-field fkey.
-            ['foo', ['foo'], ['foo']],
+            ['foo', ['foo'], ['foo'], []],
 
             // Part of compound fkey.
-            ['foo', ['foo', 'bar', 'baz'], ['foo', 'bar']],
+            ['foo', ['foo', 'bar', 'baz'], ['foo', 'bar'], []],
 
             // Part of compound fkey.
-            ['bar', ['foo', 'bar', 'baz'], ['foo', 'bar']],
+            ['bar', ['foo', 'bar', 'baz'], ['foo', 'bar'], []],
 
         ]);
     }

@@ -22,7 +22,6 @@ CROM can scan the following database assets:
 * namespaces (aka schemas or tablespaces)
 * tables
 
-
 ## Assertions
 
 Each asset scanned is subject to one or more assertions. Assertions are like

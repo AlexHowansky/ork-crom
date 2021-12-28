@@ -29,6 +29,14 @@ class ColumnIsForeignKeyAssertion extends AbstractAssertion
     {
         foreach ($asset->getTable()->getForeignKeys() as $fkey) {
             if ($fkey->getLocalColumns() === [$asset->getColumn()->getName()]) {
+                $foreignTable = $fkey->getForeignTableName();
+                if ($this->getOptionalParam('toTable', $foreignTable) !== $foreignTable) {
+                    continue;
+                }
+                $foreignColumns = $fkey->getForeignColumns();
+                if (in_array($this->getOptionalParam('toColumn', $foreignColumns[0]), $foreignColumns) === false) {
+                    continue;
+                }
                 return true;
             }
         }

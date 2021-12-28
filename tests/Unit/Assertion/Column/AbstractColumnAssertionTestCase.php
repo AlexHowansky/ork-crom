@@ -30,13 +30,13 @@ abstract class AbstractColumnAssertionTestCase extends AbstractAssertionTestCase
 
     protected function providerGeneratorForeignKey(array $cases): Generator
     {
-        foreach ($cases as [$testColumn, $createColumns, $keyColumns]) {
+        foreach ($cases as [$testColumn, $createColumns, $keyColumns, $optionalArguments]) {
             $columns = array_map(fn($name) => new Column($name, new IntegerType()), $createColumns);
             $table = new Table('local', $columns);
             if (empty($keyColumns) === false) {
                 $table->addForeignKeyConstraint(new Table('foreign', $columns), $keyColumns, $keyColumns);
             }
-            yield [new ColumnAsset($table, $table->getColumn($testColumn))];
+            yield [new ColumnAsset($table, $table->getColumn($testColumn)), $optionalArguments];
         }
     }
 

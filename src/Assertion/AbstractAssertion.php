@@ -123,8 +123,6 @@ abstract class AbstractAssertion implements AssertionInterface
      * @param mixed $default If no value is available, use this default instead.
      *
      * @return mixed The configuration value.
-     *
-     * @throws RuntimeException If the parameter is missing.
      */
     protected function getOptionalParam(string $name, mixed $default = null): mixed
     {
