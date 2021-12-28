@@ -20,12 +20,7 @@
         "symfony/yaml": "^6.0"
     },
     "require-dev": {
-        "ext-mysqli": "*",
-        "ext-oci8": "*",
-        "ext-pdo_mysql": "*",
-        "ext-pdo_pgsql": "*",
         "ext-pdo_sqlite": "*",
-        "ext-pdo_sqlsrv": "*",
         "ork/phpcs": "^2.7",
         "phpmetrics/phpmetrics": "^2.7",
         "phpstan/phpstan": "^1.2",
@@ -33,7 +28,6 @@
         "roave/security-advisories": "dev-master"
     },
     "suggest": {
-        "ext-mysqli": "Required to scan MySQL databases.",
         "ext-oci8": "Required to scan Oracle databases.",
         "ext-pdo_mysql": "Required to scan MySQL databases.",
         "ext-pdo_pgsql": "Required to scan Postgres databases.",
