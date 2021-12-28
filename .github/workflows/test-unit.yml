@@ -3,6 +3,7 @@ name: Unit Tests
 on:
   push:
     branches:
+      - dev
       - master
 
 jobs:
