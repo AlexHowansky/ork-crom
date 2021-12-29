@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: indexIsUnique
+        scanner: index
+        assertions:
+            - { assertion: indexIsUnique }

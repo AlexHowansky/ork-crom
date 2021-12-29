@@ -22,6 +22,7 @@
 
 |Assertion Name|Description|
 |:-|:-|
+|[`indexIsUnique`](Assertions/Index/IndexIsUnique.md)|Asserts that an index is unique.|
 |[`indexNameMatchesCase`](Assertions/Index/IndexNameMatchesCase.md)|Asserts that an index name matches a given casing strategy.|
 |[`indexNameMatchesRegex`](Assertions/Index/IndexNameMatchesRegex.md)|Asserts that an index name matches a given regex pattern.|
 
