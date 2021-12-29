@@ -33,7 +33,7 @@ to true or false. See the [list of assertions](docs/Assertions.md) for more deta
 
 [phpcs badge]: https://github.com/AlexHowansky/ork-crom/actions/workflows/phpcs.yml/badge.svg?branch=dev
 [phpcs]: https://github.com/AlexHowansky/ork-crom/actions/workflows/phpcs.yml?query=branch%3Adev
-[phpstan]: https://github.com/AlexHowansky/ork-crom/actions/workflows/phpstan.yml/badge.svg?branch=dev
+[phpstan badge]: https://github.com/AlexHowansky/ork-crom/actions/workflows/phpstan.yml/badge.svg?branch=dev
 [phpstan]: https://github.com/AlexHowansky/ork-crom/actions/workflows/phpstan.yml?query=branch%3Adev
 [unit test badge]: https://github.com/AlexHowansky/ork-crom/actions/workflows/test-unit.yml/badge.svg?branch=dev
 [unit test]: https://github.com/AlexHowansky/ork-crom/actions/workflows/test-unit.yml?query=branch%3Adev
