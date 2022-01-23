@@ -1,0 +1,59 @@
+# Your configuration file must have exactly one `database` section. This defines
+# the connection details and credentials for the database to be scanned. For
+# details on parameters, see:
+#
+# https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
+
+database:
+    driver: pdo_mysql
+    dbname: database
+    host: 127.0.0.1
+    port: 3306
+    user: username
+    password: password
+
+# You optionally may define one `logger` section. This can be used to send
+# detailed output to a logfile, database, or remote service. If specified, then
+# you must also include at least one log handler, which should be the full class
+# name of a class that implements \Monolog\Handler\HandlerInterface, and any
+# required arguments for it. If you just want output on the console, skip the
+# `logger` section and use a `progress` section instead.
+
+logger:
+    name: myLoggerLabel
+    handlers:
+        -
+            handler: \Monolog\Handler\StreamHandler
+            args: ['/tmp/crom.log', debug]
+
+# A `progress` meter will output run-time details to the console. The following
+# meters are available:
+#
+#   silent:     No output, just sets the exit status.
+#   dots:       Outputs a dot for each assertion.
+#   summary:    No output for individual assertions, but displays a summary.
+#   fail:       Verbose output for each failed assertion, plus a summary.
+#   verbose:    Verbose output for all assertions, plus a summary.
+
+progress: fail
+
+# Provide one or more scanners to define the assets you wish to scan.
+
+scanners:
+    -
+        label: table names are macro cased
+        scanner: table
+        assertions:
+            - { assertion: tableNameMatchesCase, strategy: macro }
+    -
+        label: tables have primary keys
+        scanner: table
+        assertions:
+            - { assertion: tableHasPrimaryKey }
+    -
+        label: columns named id are primary keys
+        scanner: column
+        include:
+            - { assertion: columnNameMatchesRegex, pattern: /^id$/i }
+        assertions:
+            - { assertion: columnIsPrimaryKey }

@@ -1,0 +1,60 @@
+
+## booleans are `NOT NULL`, have a default, and are named `is_*` or `has_*`
+
+    -
+        label: booleans are NOT NULL and named is_* or has_*
+        scanner: column
+        include:
+            - { assertion: columnHasType, type: boolean }
+        assertions:
+            - { assertion: columnHasDefault }
+            - { assertion: columnIsNullable, invert: true }
+            - { assertion: columnNameMatchesRegex, pattern: /^(is|has)_/i }
+
+## timestamps are named `*_at`
+
+    -
+        label: timestamps are named *_at
+        scanner: column
+        include:
+            - { assertion: columnHasType, type: datetime }
+        assertions:
+            - { assertion: columnNameMatchesRegex, pattern: /_at$/i }
+
+## columns named `id` are primary keys
+
+    -
+        label: columns named id are primary keys
+        scanner: column
+        include:
+            - { assertion: columnNameMatchesRegex, pattern: /^id$/i }
+        assertions:
+            - { assertion: columnIsPrimaryKey }
+            - { assertion: columnHasType, type: integer }
+            - { assertion: columnHasDefault, value: 0 }
+            - { assertion: columnIsNullable, invert: true }
+
+## primary keys are named `id`
+
+    -
+        label: primary keys are named id
+        scanner: column
+        include:
+            - { assertion: columnIsPrimaryKey }
+        assertions:
+            - { assertion: columnNameMatchesRegex, pattern: /^id$/i }
+            - { assertion: columnHasType, type: integer }
+            - { assertion: columnHasDefault }
+            - { assertion: columnIsNullable, invert: true }
+
+## columns named `*_id` are foreign keys
+
+    -
+        label: columns named *_id are foreign keys
+        scanner: column
+        include:
+            - { assertion: columnNameMatchesRegex, pattern: /_id$/i }
+        assertions:
+            - { assertion: columnIsForeignKey }
+            - { assertion: columnHasType, type: integer }
+            - { assertion: columnIsNullable, invert: true }

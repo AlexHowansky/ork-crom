@@ -6,7 +6,7 @@ CROM is configured via YAML or JSON files.
 
 Exactly one `database` section must be provided. To scan multiple databases,
 create multiple configuration files. The available parameters are documented in
-the [Doctrine DBAL reference](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html).
+the [Doctrine DBAL reference][dbal].
 
 ```yaml
 database:
@@ -41,8 +41,8 @@ details are logged at `debug`.
 
 ## `progress`
 
-Progress information may be displayed to the console via the use of the
-optional `progress` parameter.
+Progress information may be displayed to the console via the use of the optional
+`progress` parameter.
 
 ```yaml
 progress: verbose
@@ -143,3 +143,5 @@ scanners:
             - { assertion: columnHasDefault }
             - { assertion: columnIsNullable, invert: true }
 ```
+
+[dbal]: https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
