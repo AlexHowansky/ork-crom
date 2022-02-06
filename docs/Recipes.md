@@ -1,4 +1,3 @@
-
 ## booleans are `NOT NULL`, have a default, and are named `is_*` or `has_*`
 
     -
@@ -47,7 +46,11 @@
             - { assertion: columnHasDefault }
             - { assertion: columnIsNullable, invert: true }
 
-## columns named `*_id` are foreign keys
+## Foreign key columns are named consistently.
+
+We can ensure that foreign keys are named `*_id`
+
+columns named `*_id` are foreign keys
 
     -
         label: columns named *_id are foreign keys
@@ -58,3 +61,27 @@
             - { assertion: columnIsForeignKey }
             - { assertion: columnHasType, type: integer }
             - { assertion: columnIsNullable, invert: true }
+
+## Foreign key column name matches the linked table.
+
+We can ensure consistency between foreign key columns and the tables that
+they're tied to. For example, all columns that are foreign keys to `foo.id`
+should be named `foo_id`:
+
+    -
+        label: fkeys to foo.id are named foo_id
+        scanner: column
+        include:
+            - { assertion: columnIsForeignKey, toTable: foo, toColumn: id }
+        assertions:
+            - { assertion: columnNameMatchesRegex, pattern: /^foo_id$/i }
+
+And all columns named `foo_id` should be foreign keys to `foo.id`:
+
+    -
+        label: columns named foo_id are fkeys to foo.id
+        scanner: column
+        include:
+            - { assertion: columnNameMatchesRegex, pattern: /^customer_id$/i }
+        assertions:
+            - { assertion: columnIsForeignKey, toTable: customer, toColumn: id }

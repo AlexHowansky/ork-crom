@@ -37,6 +37,7 @@
 
 |Assertion Name|Description|
 |:-|:-|
+|[`tableHasIndex`](Assertions/Table/TableHasIndex.md)|Asserts that a table has at least one index.|
 |[`tableHasPrimaryKey`](Assertions/Table/TableHasPrimaryKey.md)|Asserts that a table has a primary key.|
 |[`tableNameMatchesCase`](Assertions/Table/TableNameMatchesCase.md)|Asserts that a table name matches a given casing strategy.|
 |[`tableNameMatchesRegex`](Assertions/Table/TableNameMatchesRegex.md)|Asserts that a table name matches a given regex pattern.|

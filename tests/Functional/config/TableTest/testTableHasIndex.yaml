@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: hasIndex
+        scanner: table
+        assertions:
+            - { assertion: tableHasIndex }
