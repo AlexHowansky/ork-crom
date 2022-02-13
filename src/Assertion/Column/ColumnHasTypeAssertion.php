@@ -32,7 +32,10 @@ class ColumnHasTypeAssertion extends AbstractAssertion
      */
     protected function assert(ColumnAsset $asset): bool
     {
-        return $asset->getColumn()->getType()->getName() === $this->getRequiredParam('type');
+        return in_array(
+            $asset->getColumn()->getType()->getName(),
+            (array) preg_split('/\s*\|\s*/', strtolower($this->getRequiredParam('type')))
+        );
     }
 
 }

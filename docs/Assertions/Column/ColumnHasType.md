@@ -18,14 +18,14 @@ you are having problems determining the correct type to use.
 
 |Name|Required|Description|
 |:-|:-|:-|
-|`type`|yes|The data type to assert that the column has.|
+|`type`|yes|The data type to assert that the column has. Multiple types may be specified by separating with the vertical pipe character.|
 
 #### Examples
 
 ```yaml
 -
     assertion: columnHasType
-    type: integer
+    type: integer|bigint|smallint
 ```
 
 ```yaml

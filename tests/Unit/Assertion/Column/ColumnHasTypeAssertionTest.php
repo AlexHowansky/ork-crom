@@ -22,10 +22,26 @@ class ColumnHasTypeAssertionTest extends AbstractColumnAssertionTestCase
 
     public function providerForPass(): Generator
     {
-        foreach (Type::getTypesMap() as $name => $type) {
-            $column = new Column('foo', Type::getType($name));
+        yield from $this->providerForPassSingle();
+        yield from $this->providerforPassMultiple();
+    }
+
+    protected function providerforPassMultiple(): Generator
+    {
+        foreach (['bigint', 'integer', 'smallint'] as $type) {
+            $column = new Column('foo', Type::getType($type));
             $table = new Table('foo');
-            yield [new ColumnAsset($table, $column), ['type' => $name]];
+            yield [new ColumnAsset($table, $column), ['type' => 'bigint|integer|smallint']];
+        }
+    }
+
+    protected function providerForPassSingle(): Generator
+    {
+        foreach (array_keys(Type::getTypesMap()) as $type) {
+            $column = new Column('foo', Type::getType($type));
+            $table = new Table('foo');
+            yield [new ColumnAsset($table, $column), ['type' => strtolower($type)]];
+            yield [new ColumnAsset($table, $column), ['type' => strtoupper($type)]];
         }
     }
 
