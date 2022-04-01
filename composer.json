@@ -15,15 +15,15 @@
         "bramus/ansi-php": "^3.1",
         "doctrine/dbal": "^3.3",
         "jawira/case-converter": "^3.4",
-        "monolog/monolog": "^2.3",
+        "monolog/monolog": "^2.4",
         "php": "^8",
         "symfony/yaml": "^6.0"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
         "ork/phpcs": "^2.7",
-        "phpmetrics/phpmetrics": "^2.7",
-        "phpstan/phpstan": "^1.4",
+        "phpmetrics/phpmetrics": "^2.8",
+        "phpstan/phpstan": "^1.5",
         "phpunit/phpunit": "^9.5",
         "roave/security-advisories": "dev-master"
     },
