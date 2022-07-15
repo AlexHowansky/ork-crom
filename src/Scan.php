@@ -147,6 +147,7 @@ class Scan
              */
             $this->progress = new $className();
         }
+        // @phpstan-ignore-next-line
         return $this->progress;
     }
 
