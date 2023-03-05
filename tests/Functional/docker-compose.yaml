@@ -31,7 +31,7 @@ services:
             ORACLE_DATABASE: ork_crom
             ORACLE_RANDOM_PASSWORD: 'yes'
     postgres:
-        image: postgres:14
+        image: postgres:15
         restart: always
         ports:
             - 5432:5432
