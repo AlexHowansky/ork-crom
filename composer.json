@@ -13,9 +13,9 @@
     ],
     "require": {
         "bramus/ansi-php": "^3.1",
-        "doctrine/dbal": "^3.5",
+        "doctrine/dbal": "^3.6",
         "jawira/case-converter": "^3.5",
-        "monolog/monolog": "^2.8",
+        "monolog/monolog": "^2.9",
         "php": "^8",
         "symfony/yaml": "^6.0"
     },
@@ -23,8 +23,8 @@
         "ext-pdo_sqlite": "*",
         "ork/phpcs": "^2.8",
         "phpmetrics/phpmetrics": "^2.8",
-        "phpstan/phpstan": "^1.9",
-        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.6",
         "roave/security-advisories": "dev-master"
     },
     "suggest": {
