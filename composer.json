@@ -13,18 +13,18 @@
     ],
     "require": {
         "bramus/ansi-php": "^3.1",
-        "doctrine/dbal": "^3.6",
-        "jawira/case-converter": "^3.5",
-        "monolog/monolog": "^2.9",
+        "doctrine/dbal": "^3.6.1",
+        "jawira/case-converter": "^3.5.1",
+        "monolog/monolog": "^2.9.1",
         "php": "^8",
-        "symfony/yaml": "^6.0"
+        "symfony/yaml": "^6.0.19"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
-        "ork/phpcs": "^2.8",
-        "phpmetrics/phpmetrics": "^2.8",
-        "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^9.6",
+        "ork/phpcs": "^2.8.1",
+        "phpmetrics/phpmetrics": "^2.8.2",
+        "phpstan/phpstan": "^1.10.11",
+        "phpunit/phpunit": "^9.6.6",
         "roave/security-advisories": "dev-master"
     },
     "suggest": {
