@@ -34,7 +34,7 @@ class ColumnHasTypeAssertion extends AbstractAssertion
     {
         return in_array(
             $asset->getColumn()->getType()->getName(),
-            (array) preg_split('/\s*\|\s*/', strtolower($this->getRequiredParam('type')))
+            (array) preg_split('/\s*\|\s*/', strtolower((string) $this->getRequiredParam('type')))
         );
     }
 

@@ -6,6 +6,7 @@ use Doctrine\DBAL\Platforms\OraclePlatform;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
+use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Scan;
 use Ork\Crom\Scanner\AbstractScanner;
 use PHPUnit\Framework\TestCase;
@@ -125,11 +126,10 @@ abstract class AbstractFunctionalTestCase extends TestCase
         foreach ($tests as [$scannerLabel, $assetName, $shouldPass]) {
             $this->assertTrue(
                 $log->hasRecordThatPasses(
-                    function (LogRecord $record) use ($scannerLabel, $assetName, $assertionName) {
-                        return $record['context']['scanner']->getLabel() === $scannerLabel &&
-                            $record['context']['assertion']->getName() === $assertionName &&
-                            strcasecmp($record['context']['asset']->getName(), $assetName) === 0;
-                    },
+                    fn(LogRecord $record) =>
+                        $record['context']['scanner']->getLabel() === $scannerLabel &&
+                        $record['context']['assertion']->getName() === $assertionName &&
+                        strcasecmp((string) $record['context']['asset']->getName(), (string) $assetName) === 0,
                     Level::fromName(
                         $shouldPass === true
                             ? AbstractScanner::LOG_LEVEL_PASS

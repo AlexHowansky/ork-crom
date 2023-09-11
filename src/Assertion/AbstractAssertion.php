@@ -63,7 +63,7 @@ abstract class AbstractAssertion implements AssertionInterface
          * assertions support which types of assets, we'll have to do an explicit check for the assert() method here.
          */
         if (method_exists($this, 'assert') === false) {
-            throw new LogicException(sprintf('Assertion class %s does not have an assert() method.', $this::class));
+            throw new LogicException(sprintf('Assertion class %s does not have an assert() method.', static::class));
         }
 
         try {

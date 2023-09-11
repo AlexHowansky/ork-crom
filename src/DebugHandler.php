@@ -141,7 +141,7 @@ class DebugHandler extends Handler
         if (isset($record['context']['asset']) === false) {
             return false;
         }
-        switch (get_class($record['context']['asset'])) {
+        switch ($record['context']['asset']::class) {
             case ColumnAsset::class:
                 $this->dumpColumn($record['context']['asset']);
                 break;

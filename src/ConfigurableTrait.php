@@ -64,7 +64,7 @@ trait ConfigurableTrait
         }
         $config = match (strtolower(pathinfo($configFile, PATHINFO_EXTENSION))) {
             'yaml' => Yaml::parseFile($configFile),
-            'json' => json_decode((string) file_get_contents($configFile), true),
+            'json' => json_decode((string) file_get_contents($configFile), true, 512, JSON_THROW_ON_ERROR),
             default => throw new RuntimeException('Unknown configuration file type'),
         };
         $this->config = array_merge($this->config, $config);

@@ -40,7 +40,7 @@ class AbstractNameMatchesCaseAssertion extends AbstractAssertion
     protected function matchesCase(AssetInterface $asset): bool
     {
         $convert = new Convert($asset->getName());
-        $class = 'to' . ucfirst(strtolower($this->getRequiredParam('strategy')));
+        $class = 'to' . ucfirst(strtolower((string) $this->getRequiredParam('strategy')));
         try {
             return $asset->getName() === $convert->$class();
         } catch (CaseConverterException) {

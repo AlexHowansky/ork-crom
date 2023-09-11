@@ -132,7 +132,7 @@ class Scan
             $className = sprintf(
                 '%s\%sProgress',
                 (new ReflectionClass(ProgressInterface::class))->getNamespaceName(),
-                ucfirst(strtolower($this->getConfig('progress', 'silent')))
+                ucfirst(strtolower((string) $this->getConfig('progress', 'silent')))
             );
             if (class_exists($className) === false) {
                 throw new RuntimeException(
@@ -168,12 +168,12 @@ class Scan
                 sprintf('Configuration for scanner "%s" has no assertions', $config['scanner'])
             );
         }
-        $class = strpos($config['scanner'], '\\') === 0
+        $class = str_starts_with((string) $config['scanner'], '\\') === true
             ? $config['scanner']
             : sprintf(
                 '%s\%sScanner',
                 (new ReflectionClass(ScannerInterface::class))->getNamespaceName(),
-                ucfirst(strtolower($config['scanner']))
+                ucfirst(strtolower((string) $config['scanner']))
             );
         if (class_exists($class) === false) {
             throw new RuntimeException(sprintf('Configuration references unknown scanner "%s"', $config['scanner']));

@@ -28,8 +28,8 @@ use RuntimeException;
 abstract class AbstractScanner implements ScannerInterface
 {
 
-    public const LOG_LEVEL_FAIL = LogLevel::ERROR;
-    public const LOG_LEVEL_PASS = LogLevel::NOTICE;
+    final public const LOG_LEVEL_FAIL = LogLevel::ERROR;
+    final public const LOG_LEVEL_PASS = LogLevel::NOTICE;
 
     /**
      * Constructor.
@@ -99,7 +99,7 @@ abstract class AbstractScanner implements ScannerInterface
             '%s\%s\%sAssertion',
             $assertionInterface->getNamespaceName(),
             ucfirst($this->getName()),
-            ucfirst($assertionConfig['assertion'])
+            ucfirst((string) $assertionConfig['assertion'])
         );
         if (class_exists($className) === false) {
             throw new RuntimeException(
@@ -240,7 +240,7 @@ abstract class AbstractScanner implements ScannerInterface
                         'assertion' => $assertion,
                     ]
                 );
-            } catch (AssertionException $e) {
+            } catch (AssertionException) {
                 $this->getProgress()->fail($this, $asset, $assertion);
                 $this->getLogger()->log(
                     self::LOG_LEVEL_FAIL,

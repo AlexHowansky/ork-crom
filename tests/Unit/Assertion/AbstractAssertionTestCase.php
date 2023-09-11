@@ -89,7 +89,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         try {
             $assertion($asset);
             $this->assertTrue(true);
-        } catch (AssertionException $e) {
+        } catch (AssertionException) {
             $this->fail(sprintf('Value "%s" failed inverted assertion but should not have.', $asset->getName()));
         }
     }
