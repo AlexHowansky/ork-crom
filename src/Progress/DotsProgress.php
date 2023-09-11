@@ -83,11 +83,6 @@ class DotsProgress extends SilentProgress
      */
     public function summary(): void
     {
-        /**
-         * PHPStan doesn't seem to recognize printf's variable width parameters.
-         *
-         * @phpstan-ignore-next-line
-         */
         $this->write(sprintf("%*s <option>[%d]</>\n", self::WIDTH - $this->count % self::WIDTH, ' ', $this->count));
     }
 

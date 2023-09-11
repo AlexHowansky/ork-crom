@@ -13,7 +13,7 @@
     ],
     "require": {
         "bramus/ansi-php": "^3.1",
-        "doctrine/dbal": "^3.6.5",
+        "doctrine/dbal": "^3.6.6",
         "jawira/case-converter": "^3.5.1",
         "monolog/monolog": "^2.9.1",
         "php": "^8",
@@ -23,8 +23,8 @@
         "ext-pdo_sqlite": "*",
         "ork/phpcs": "^2.8.1",
         "phpmetrics/phpmetrics": "^2.8.2",
-        "phpstan/phpstan": "^1.10.26",
-        "phpunit/phpunit": "^9.6.10",
+        "phpstan/phpstan": "^1.10.33",
+        "phpunit/phpunit": "^9.6.11",
         "roave/security-advisories": "dev-master"
     },
     "suggest": {
