@@ -13,9 +13,9 @@ use Generator;
 class ColumnIsPartOfPrimaryKeyAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
-        yield from $this->providerGeneratorPrimaryKey([
+        yield from static::providerGeneratorPrimaryKey([
             ['foo', ['foo'], []],
             ['foo', ['foo', 'bar'], []],
             ['bar', ['foo', 'bar'], []],
@@ -24,9 +24,9 @@ class ColumnIsPartOfPrimaryKeyAssertionTest extends AbstractColumnAssertionTestC
         ]);
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerGeneratorPrimaryKey([
+        yield from static::providerGeneratorPrimaryKey([
             ['foo', ['foo'], ['foo']],
             ['foo', ['foo', 'bar'], ['foo']],
             ['foo', ['foo', 'bar', 'baz'], ['foo']],

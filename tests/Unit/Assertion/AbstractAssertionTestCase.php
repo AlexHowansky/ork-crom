@@ -46,13 +46,13 @@ abstract class AbstractAssertionTestCase extends TestCase
         return new $assertionClass($config);
     }
 
-    abstract public function providerForBadType(): Generator;
+    abstract public static function providerForBadType(): Generator;
 
-    abstract public function providerForFail(): Generator;
+    abstract public static function providerForFail(): Generator;
 
-    abstract public function providerForPass(): Generator;
+    abstract public static function providerForPass(): Generator;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [null, null, null];
     }

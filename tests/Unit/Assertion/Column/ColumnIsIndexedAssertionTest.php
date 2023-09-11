@@ -13,18 +13,18 @@ use Generator;
 class ColumnIsIndexedAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
-        yield from $this->providerGeneratorIndexed([
+        yield from static::providerGeneratorIndexed([
             ['foo', ['foo', 'bar', 'baz'], []],
             ['foo', ['foo', 'bar', 'baz'], ['bar']],
             ['foo', ['foo', 'bar', 'baz'], ['bar', 'foo']],
         ]);
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerGeneratorIndexed([
+        yield from static::providerGeneratorIndexed([
             ['foo', ['foo', 'bar', 'baz'], ['foo']],
             ['foo', ['foo', 'bar', 'baz'], ['foo', 'bar']],
             ['foo', ['foo', 'bar', 'baz'], ['foo', 'bar', 'baz']],

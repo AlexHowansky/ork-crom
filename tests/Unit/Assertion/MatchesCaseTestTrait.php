@@ -10,9 +10,9 @@ use Generator;
 trait MatchesCaseTestTrait
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
-        yield from $this->providerGenerator([
+        yield from static::providerGenerator([
             ['fooBar', ['strategy' => 'dot']],
             ['FooBar', ['strategy' => 'camel']],
             ['foo_bar', ['strategy' => 'pascal']],
@@ -29,9 +29,9 @@ trait MatchesCaseTestTrait
         ]);
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerGenerator([
+        yield from static::providerGenerator([
             ['fooBar', ['strategy' => 'camel']],
             ['FooBar', ['strategy' => 'pascal']],
             ['foo_bar', ['strategy' => 'snake']],

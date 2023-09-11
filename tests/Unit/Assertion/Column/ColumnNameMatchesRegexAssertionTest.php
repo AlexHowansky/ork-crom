@@ -14,7 +14,7 @@ class ColumnNameMatchesRegexAssertionTest extends AbstractColumnAssertionTestCas
 
     use MatchesRegexTestTrait;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new ColumnAsset(new Table('FOO'), new Column('BAR', new StringType())), 'pattern'];
     }

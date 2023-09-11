@@ -21,7 +21,7 @@ abstract class AbstractUnitTestCase extends TestCase
         $file = sprintf(
             '%s/config/%s.%s',
             dirname((new ReflectionClass($this))->getFileName()),
-            $this->getName(false),
+            $this->name(false),
             $extension
         );
         return file_exists($file) === true ? $file : null;

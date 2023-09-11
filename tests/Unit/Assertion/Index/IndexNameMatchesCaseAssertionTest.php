@@ -14,7 +14,7 @@ class IndexNameMatchesCaseAssertionTest extends AbstractIndexAssertionTestCase
 
     use MatchesCaseTestTrait;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new IndexAsset(new Table('foo'), new Index('idx_foo', ['bar'])), 'strategy'];
     }

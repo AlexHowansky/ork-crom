@@ -12,7 +12,7 @@ class NamespaceNameMatchesCaseAssertionTest extends AbstractNamespaceAssertionTe
 
     use MatchesCaseTestTrait;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new NamespaceAsset('FOO'), 'strategy'];
     }

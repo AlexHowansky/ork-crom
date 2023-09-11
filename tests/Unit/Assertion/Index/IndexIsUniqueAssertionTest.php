@@ -12,7 +12,7 @@ use Ork\Crom\Asset\IndexAsset;
 class IndexIsUniqueAssertionTest extends AbstractIndexAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         $column = new Column('bar', new IntegerType());
         $index = new Index('idx_foo', ['bar'], false);
@@ -20,7 +20,7 @@ class IndexIsUniqueAssertionTest extends AbstractIndexAssertionTestCase
         yield [new IndexAsset($table, $index)];
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
         $column = new Column('bar', new IntegerType());
         $index = new Index('idx_foo', ['bar'], true);

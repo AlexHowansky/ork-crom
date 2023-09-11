@@ -17,21 +17,21 @@ use Ork\Crom\Tests\Unit\Assertion\AbstractAssertionTestCase;
 abstract class AbstractColumnAssertionTestCase extends AbstractAssertionTestCase
 {
 
-    public function providerForBadType(): Generator
+    public static function providerForBadType(): Generator
     {
         yield [new IndexAsset(new Table('foo'), new Index('idx_foo', ['bar']))];
         yield [new NamespaceAsset('foo')];
         yield [new TableAsset(new Table('foo'))];
     }
 
-    protected function providerGenerator(array $cases): Generator
+    protected static function providerGenerator(array $cases): Generator
     {
         foreach ($cases as [$name, $config]) {
             yield [new ColumnAsset(new Table('foo'), new Column($name, new StringType())), $config];
         }
     }
 
-    protected function providerGeneratorForeignKey(array $cases): Generator
+    protected static function providerGeneratorForeignKey(array $cases): Generator
     {
         foreach ($cases as [$testColumn, $createColumns, $keyColumns, $optionalArguments]) {
             $columns = array_map(fn($name) => new Column($name, new IntegerType()), $createColumns);
@@ -43,7 +43,7 @@ abstract class AbstractColumnAssertionTestCase extends AbstractAssertionTestCase
         }
     }
 
-    protected function providerGeneratorIndexed(array $cases): Generator
+    protected static function providerGeneratorIndexed(array $cases): Generator
     {
         foreach ($cases as [$testColumn, $createColumns, $indexColumns]) {
             $columns = array_map(fn($name) => new Column($name, new IntegerType()), $createColumns);
@@ -53,7 +53,7 @@ abstract class AbstractColumnAssertionTestCase extends AbstractAssertionTestCase
         }
     }
 
-    protected function providerGeneratorPrimaryKey(array $cases): Generator
+    protected static function providerGeneratorPrimaryKey(array $cases): Generator
     {
         foreach ($cases as [$testColumn, $createColumns, $keyColumns]) {
             $columns = array_map(fn($name) => new Column($name, new IntegerType()), $createColumns);

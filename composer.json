@@ -15,16 +15,16 @@
         "bramus/ansi-php": "^3.1",
         "doctrine/dbal": "^3.6.6",
         "jawira/case-converter": "^3.5.1",
-        "monolog/monolog": "^2.9.1",
-        "php": "^8",
-        "symfony/yaml": "^6.0.19"
+        "monolog/monolog": "^3.4",
+        "php": "^8.1",
+        "symfony/yaml": "^6.3.3"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
         "ork/phpcs": "^2.8.1",
         "phpmetrics/phpmetrics": "^2.8.2",
         "phpstan/phpstan": "^1.10.33",
-        "phpunit/phpunit": "^9.6.11",
+        "phpunit/phpunit": "^10.3.3",
         "roave/security-advisories": "dev-master"
     },
     "suggest": {
@@ -45,16 +45,16 @@
         }
     },
     "scripts": {
-        "coverage": "XDEBUG_MODE=coverage phpunit",
-        "coverage-functional": "XDEBUG_MODE=coverage phpunit --testsuite functional",
-        "coverage-unit": "XDEBUG_MODE=coverage phpunit --testsuite unit",
+        "coverage": "XDEBUG_MODE=coverage phpunit --no-progress",
+        "coverage-functional": "XDEBUG_MODE=coverage phpunit --testsuite functional --no-progress",
+        "coverage-unit": "XDEBUG_MODE=coverage phpunit --testsuite unit --no-progress",
         "doc": "phpDocumentor",
         "metrics": "phpmetrics --config=phpmetrics.json",
         "phpcs": "phpcs",
         "phpstan": "phpstan analyze",
-        "test": "phpunit --no-coverage",
-        "test-functional": "phpunit --testsuite functional --no-coverage",
-        "test-unit": "phpunit --testsuite unit --no-coverage"
+        "test": "phpunit --no-coverage --no-progress",
+        "test-functional": "phpunit --testsuite functional --no-coverage --no-progress",
+        "test-unit": "phpunit --testsuite unit --no-coverage --no-progress"
     },
     "config": {
         "allow-plugins": {

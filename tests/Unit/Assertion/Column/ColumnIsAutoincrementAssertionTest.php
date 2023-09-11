@@ -11,14 +11,14 @@ use Ork\Crom\Asset\ColumnAsset;
 class ColumnIsAutoincrementAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         $column = (new Column('foo', new IntegerType()))->setAutoincrement(false);
         $table = new Table('foo');
         yield [new ColumnAsset($table, $column)];
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
         $column = (new Column('foo', new IntegerType()))->setAutoincrement(true);
         $table = new Table('foo');

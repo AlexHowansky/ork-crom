@@ -4,6 +4,8 @@ namespace Ork\Crom\Tests\Functional;
 
 use Doctrine\DBAL\Platforms\OraclePlatform;
 use Monolog\Handler\TestHandler;
+use Monolog\Level;
+use Monolog\LogRecord;
 use Ork\Crom\Scan;
 use Ork\Crom\Scanner\AbstractScanner;
 use PHPUnit\Framework\TestCase;
@@ -50,7 +52,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
                 $pattern,
                 $schemaDir,
                 (new ReflectionClass($this))->getShortName(),
-                $this->getName(false)
+                $this->name()
             );
             if (file_exists($file) === true) {
                 return file_get_contents($file);
@@ -77,7 +79,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
             '%s/config/%s/%s.yaml',
             __DIR__,
             (new ReflectionClass($this))->getShortName(),
-            $this->getName(false)
+            $this->name()
         );
         if (file_exists($file) === false) {
             throw new RuntimeException(sprintf('Missing required test config file %s', $file));
@@ -119,16 +121,20 @@ abstract class AbstractFunctionalTestCase extends TestCase
         $log = new TestHandler();
         $this->scan->pushHandler($log);
         ($this->scan)();
-        $assertionName = lcfirst(preg_replace('/^test/', '', $this->getName(false)));
+        $assertionName = lcfirst(preg_replace('/^test/', '', $this->name()));
         foreach ($tests as [$scannerLabel, $assetName, $shouldPass]) {
             $this->assertTrue(
                 $log->hasRecordThatPasses(
-                    function (array $record) use ($scannerLabel, $assetName, $assertionName) {
+                    function (LogRecord $record) use ($scannerLabel, $assetName, $assertionName) {
                         return $record['context']['scanner']->getLabel() === $scannerLabel &&
                             $record['context']['assertion']->getName() === $assertionName &&
                             strcasecmp($record['context']['asset']->getName(), $assetName) === 0;
                     },
-                    $shouldPass === true ? AbstractScanner::LOG_LEVEL_PASS : AbstractScanner::LOG_LEVEL_FAIL
+                    Level::fromName(
+                        $shouldPass === true
+                            ? AbstractScanner::LOG_LEVEL_PASS
+                            : AbstractScanner::LOG_LEVEL_FAIL
+                    )
                 ),
                 sprintf(
                     "Unable to find log matching:\n  scanner: %s\n  asset: %s\n  assertion: %s\n  should pass: %s\n",

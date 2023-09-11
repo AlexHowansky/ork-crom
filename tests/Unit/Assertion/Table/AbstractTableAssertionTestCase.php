@@ -16,14 +16,14 @@ use Ork\Crom\Tests\Unit\Assertion\AbstractAssertionTestCase;
 abstract class AbstractTableAssertionTestCase extends AbstractAssertionTestCase
 {
 
-    public function providerForBadType(): Generator
+    public static function providerForBadType(): Generator
     {
         yield [new ColumnAsset(new Table('foo'), new Column('bar', new StringType()))];
         yield [new IndexAsset(new Table('foo'), new Index('idx_foo', ['bar']))];
         yield [new NamespaceAsset('foo')];
     }
 
-    protected function providerGenerator(array $cases): Generator
+    protected static function providerGenerator(array $cases): Generator
     {
         foreach ($cases as [$name, $config]) {
             yield [new TableAsset(new Table($name)), $config];

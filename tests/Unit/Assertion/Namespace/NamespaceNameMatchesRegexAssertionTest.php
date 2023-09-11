@@ -11,7 +11,7 @@ class NamespaceNameMatchesRegexAssertionTest extends AbstractNamespaceAssertionT
 
     use MatchesRegexTestTrait;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new NamespaceAsset('FOO'), 'pattern'];
     }

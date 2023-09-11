@@ -15,7 +15,7 @@ class ColumnNameMatchesCaseAssertionTest extends AbstractColumnAssertionTestCase
 
     use MatchesCaseTestTrait;
 
-    public function providerForRequiredParametersMissing(): Generator
+    public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new ColumnAsset(new Table('FOO'), new Column('BAR', new StringType())), 'strategy'];
     }

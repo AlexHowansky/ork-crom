@@ -13,6 +13,7 @@ namespace Ork\Crom;
 
 use Monolog\Handler\Handler;
 use Monolog\Logger;
+use Monolog\LogRecord;
 use Ork\Crom\Asset\ColumnAsset;
 use Ork\Crom\Asset\IndexAsset;
 use Ork\Crom\Asset\NamespaceAsset;
@@ -135,7 +136,7 @@ class DebugHandler extends Handler
      *
      * @throws RuntimeException If an unknown asset type is encountered.
      */
-    public function handle(array $record): bool
+    public function handle(LogRecord $record): bool
     {
         if (isset($record['context']['asset']) === false) {
             return false;
@@ -166,7 +167,7 @@ class DebugHandler extends Handler
     /**
      * {@inheritDoc}
      */
-    public function isHandling(array $record): bool
+    public function isHandling(LogRecord $record): bool
     {
         return $record['level'] <= Logger::DEBUG;
     }

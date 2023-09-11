@@ -14,9 +14,9 @@ use Generator;
 class ColumnIsPartOfForeignKeyAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
-        yield from $this->providerGeneratorForeignKey([
+        yield from static::providerGeneratorForeignKey([
 
             // No fkey at all.
             ['foo', ['foo'], [], []],
@@ -30,9 +30,9 @@ class ColumnIsPartOfForeignKeyAssertionTest extends AbstractColumnAssertionTestC
         ]);
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerGeneratorForeignKey([
+        yield from static::providerGeneratorForeignKey([
 
             // Part of single-field fkey.
             ['foo', ['foo'], ['foo'], []],

@@ -10,12 +10,12 @@ use Ork\Crom\Asset\TableAsset;
 class TableHasIndexAssertionTest extends AbstractTableAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         yield [new TableAsset(new Table('foo'))];
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
         $table = new Table('foo');
         $table->addColumn('bar', Types::INTEGER);

@@ -11,7 +11,7 @@ use Ork\Crom\Asset\ColumnAsset;
 class ColumnHasDefaultAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         $column = new Column('foo', new IntegerType());
         $table = new Table('foo');
@@ -19,7 +19,7 @@ class ColumnHasDefaultAssertionTest extends AbstractColumnAssertionTestCase
         yield [new ColumnAsset($table, $column), ['value' => 0]];
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
         foreach ([-1, 0, 1] as $default) {
             $column = (new Column('foo', new IntegerType()))->setDefault($default);

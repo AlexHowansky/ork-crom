@@ -15,7 +15,7 @@ use Ork\Crom\Scanner\AbstractScanner;
 class ProgressTest extends AbstractUnitTestCase
 {
 
-    public function providerForProgress(): array
+    public static function providerForProgress(): array
     {
         return [
             [new DotsProgress(), '/\./'],

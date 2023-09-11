@@ -10,9 +10,9 @@ use Generator;
 trait MatchesRegexTestTrait
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
-        yield from $this->providerGenerator([
+        yield from static::providerGenerator([
             ['FOO', ['pattern' => '/^f/']],
             ['FOO', ['pattern' => '/x$/']],
             ['FOO-BAR', ['pattern' => '/^[FO]+$/']],
@@ -20,9 +20,9 @@ trait MatchesRegexTestTrait
         ]);
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerGenerator([
+        yield from static::providerGenerator([
             ['FOO', ['pattern' => '/^F/']],
             ['FOO', ['pattern' => '/^f/i']],
             ['FOO', ['pattern' => '/^[FO]+$/']],

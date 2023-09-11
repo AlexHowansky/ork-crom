@@ -11,7 +11,7 @@ use Ork\Crom\Asset\ColumnAsset;
 class ColumnHasTypeAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         foreach (Type::getTypesMap() as $name => $type) {
             $column = new Column('foo', Type::getType($name));
@@ -20,13 +20,13 @@ class ColumnHasTypeAssertionTest extends AbstractColumnAssertionTestCase
         }
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
-        yield from $this->providerForPassSingle();
-        yield from $this->providerforPassMultiple();
+        yield from static::providerForPassSingle();
+        yield from static::providerforPassMultiple();
     }
 
-    protected function providerforPassMultiple(): Generator
+    protected static function providerforPassMultiple(): Generator
     {
         foreach (['bigint', 'integer', 'smallint'] as $type) {
             $column = new Column('foo', Type::getType($type));
@@ -35,7 +35,7 @@ class ColumnHasTypeAssertionTest extends AbstractColumnAssertionTestCase
         }
     }
 
-    protected function providerForPassSingle(): Generator
+    protected static function providerForPassSingle(): Generator
     {
         foreach (array_keys(Type::getTypesMap()) as $type) {
             $column = new Column('foo', Type::getType($type));

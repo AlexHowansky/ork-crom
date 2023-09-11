@@ -12,7 +12,7 @@ use Ork\Crom\Asset\ColumnAsset;
 class ColumnHasLengthAtLeastAssertionTest extends AbstractColumnAssertionTestCase
 {
 
-    public function providerForFail(): Generator
+    public static function providerForFail(): Generator
     {
         foreach ([new IntegerType(), new StringType()] as $type) {
             for ($i = 1; $i <= 5; $i++) {
@@ -23,7 +23,7 @@ class ColumnHasLengthAtLeastAssertionTest extends AbstractColumnAssertionTestCas
         }
     }
 
-    public function providerForPass(): Generator
+    public static function providerForPass(): Generator
     {
         foreach ([new IntegerType(), new StringType()] as $type) {
             for ($i = 2; $i <= 6; $i++) {
