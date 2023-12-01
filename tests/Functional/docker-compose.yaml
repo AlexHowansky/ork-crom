@@ -1,7 +1,6 @@
-version: "3.8"
 services:
     mariadb:
-        image: mariadb:10
+        image: mariadb:11
         restart: always
         ports:
             - 3307:3306
@@ -31,7 +30,7 @@ services:
             ORACLE_DATABASE: ork_crom
             ORACLE_RANDOM_PASSWORD: 'yes'
     postgres:
-        image: postgres:15
+        image: postgres:16
         restart: always
         ports:
             - 5432:5432
