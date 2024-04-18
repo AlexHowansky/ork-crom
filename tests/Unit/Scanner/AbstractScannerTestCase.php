@@ -29,7 +29,7 @@ abstract class AbstractScannerTestCase extends AbstractUnitTestCase
         $this->assertSame($logger, $scanner->getLogger());
         $this->assertSame($schemaManager, $scanner->getSchemaManager());
         $this->assertSame(
-            strtolower(preg_replace('/Scanner$/', '', (new \ReflectionClass($scanner))->getShortName())),
+            strtolower((string) preg_replace('/Scanner$/', '', (new \ReflectionClass($scanner))->getShortName())),
             $scanner->getName()
         );
     }

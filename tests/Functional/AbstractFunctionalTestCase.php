@@ -122,7 +122,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
         $log = new TestHandler();
         $this->scan->pushHandler($log);
         ($this->scan)();
-        $assertionName = lcfirst(preg_replace('/^test/', '', $this->name()));
+        $assertionName = lcfirst((string) preg_replace('/^test/', '', $this->name()));
         foreach ($tests as [$scannerLabel, $assetName, $shouldPass]) {
             $this->assertTrue(
                 $log->hasRecordThatPasses(
