@@ -1,6 +1,8 @@
 parameters:
+    ignoreErrors:
+        -
+            identifier: missingType.generics
     level: 8
-    checkGenericClassInNonGenericObjectType: false
     paths:
         - bin
         - src

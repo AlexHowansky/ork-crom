@@ -138,6 +138,7 @@ class DebugHandler extends Handler
      */
     public function handle(LogRecord $record): bool
     {
+        // @phpstan-ignore-next-line
         if (isset($record['context']['asset']) === false) {
             return false;
         }
