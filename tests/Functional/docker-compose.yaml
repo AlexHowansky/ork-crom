@@ -10,7 +10,7 @@ services:
             MARIADB_PASSWORD: ork_crom
             MARIADB_RANDOM_ROOT_PASSWORD: 1
     mysql:
-        image: mysql:8
+        image: mysql:9
         restart: always
         ports:
             - 3306:3306

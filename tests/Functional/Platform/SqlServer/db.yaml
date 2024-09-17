@@ -5,3 +5,5 @@ database:
     port: 1433
     user: sa
     password: Ork_CROM
+    driverOptions:
+      TrustServerCertificate: true
