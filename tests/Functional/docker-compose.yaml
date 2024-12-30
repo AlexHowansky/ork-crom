@@ -20,7 +20,7 @@ services:
             MYSQL_PASSWORD: ork_crom
             MYSQL_RANDOM_ROOT_PASSWORD: 1
     oracle:
-        image: gvenzl/oracle-xe:21-slim
+        image: gvenzl/oracle-free:23-slim
         restart: always
         ports:
             - 1521:1521
