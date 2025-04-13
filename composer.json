@@ -16,7 +16,7 @@
         "doctrine/dbal": "^3.9.4",
         "jawira/case-converter": "^3.5.2",
         "monolog/monolog": "^3.9.0",
-        "php": "^8.2",
+        "php": "^8.4",
         "symfony/yaml": "^7.2.5"
     },
     "require-dev": {

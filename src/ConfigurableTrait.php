@@ -29,7 +29,7 @@ trait ConfigurableTrait
      *
      * @param string $configFile The name of the configuration file.
      */
-    public function __construct(string $configFile = null)
+    public function __construct(?string $configFile = null)
     {
         if ($configFile !== null) {
             $this->setConfig($configFile);
