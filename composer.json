@@ -24,7 +24,7 @@
         "ork/phpcs": "dev-master",
         "phpmetrics/phpmetrics": "^3.0.0rc8",
         "phpstan/phpstan": "^2.1.17",
-        "phpunit/phpunit": "^10.5.46",
+        "phpunit/phpunit": "^12.2.2",
         "rector/rector": "^2.0.18",
         "roave/security-advisories": "dev-master"
     },
@@ -55,8 +55,8 @@
         "phpstan": "phpstan analyze",
         "rector": "rector --dry-run --clear-cache",
         "test": "phpunit --no-coverage --no-progress",
-        "test-functional": "phpunit --testsuite functional --no-coverage --no-progress",
-        "test-unit": "phpunit --testsuite unit --no-coverage --no-progress"
+        "test-functional": "phpunit --testsuite functional --no-coverage --no-progress --stop-on-defect",
+        "test-unit": "phpunit --testsuite unit --no-coverage --no-progress --stop-on-defect"
     },
     "config": {
         "allow-plugins": {

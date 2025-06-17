@@ -14,7 +14,7 @@ class TableNameMatchesCaseAssertionTest extends AbstractTableAssertionTestCase
 
     use MatchesCaseTestTrait;
 
-    #[\Override]
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new TableAsset(new Table('FOO')), 'strategy'];

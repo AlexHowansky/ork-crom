@@ -11,6 +11,7 @@ use Ork\Crom\Progress\SilentProgress;
 use Ork\Crom\Progress\SummaryProgress;
 use Ork\Crom\Progress\VerboseProgress;
 use Ork\Crom\Scanner\AbstractScanner;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ProgressTest extends AbstractUnitTestCase
 {
@@ -26,9 +27,7 @@ class ProgressTest extends AbstractUnitTestCase
         ];
     }
 
-    /**
-     * @dataProvider providerForProgress
-     */
+    #[DataProvider('providerForProgress')]
     public function testProgress(ProgressInterface $progress, string $outputRegex): void
     {
         $this->expectOutputRegex($outputRegex);

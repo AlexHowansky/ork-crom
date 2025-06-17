@@ -11,6 +11,7 @@ use Ork\Crom\Assertion\AssertionException;
 use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Scanner\AbstractScanner;
 use Ork\Crom\Progress\SilentProgress;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 use ReflectionClass;
@@ -34,15 +35,6 @@ abstract class AbstractAssertionTestCase extends TestCase
         if (class_exists($assertionClass) === false) {
             throw new RuntimeException('Missing expected assertion class: ' . $assertionClass);
         }
-        $mockScanner = $this->getMockForAbstractClass(
-            AbstractScanner::class,
-            [
-                [],
-                new SilentProgress(),
-                new NullLogger(),
-                DriverManager::getConnection(['driver' => 'pdo_sqlite'])->createSchemaManager(),
-            ]
-        );
         return new $assertionClass($config);
     }
 
@@ -57,9 +49,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         yield [null, null, null];
     }
 
-    /**
-     * @dataProvider providerForBadType
-     */
+    #[DataProvider('providerForBadType')]
     public function testBadType(AssetInterface $asset): void
     {
         $assertion = $this->getAssertion();
@@ -70,9 +60,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         $assertion($asset);
     }
 
-    /**
-     * @dataProvider providerForFail
-     */
+    #[DataProvider('providerForFail')]
     public function testFail(AssetInterface $asset, array $config = []): void
     {
         $assertion = $this->getAssertion($config);
@@ -94,9 +82,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         }
     }
 
-    /**
-     * @dataProvider providerForPass
-     */
+    #[DataProvider('providerForPass')]
     public function testLabel(AssetInterface $asset, array $config = []): void
     {
         $assertion = $this->getAssertion($config);
@@ -109,9 +95,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         }
     }
 
-    /**
-     * @dataProvider providerForPass
-     */
+    #[DataProvider('providerForPass')]
     public function testPass(AssetInterface $asset, array $config = []): void
     {
         $assertion = $this->getAssertion($config);
@@ -133,9 +117,7 @@ abstract class AbstractAssertionTestCase extends TestCase
         }
     }
 
-    /**
-     * @dataProvider providerForRequiredParametersMissing
-     */
+    #[DataProvider('providerForRequiredParametersMissing')]
     public function testRequiredParametersMissing(
         ?AssetInterface $asset,
         ?string $parameterName,
