@@ -7,12 +7,14 @@ use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\IndexAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesRegexTestTrait;
+use Override;
 
 class IndexNameMatchesRegexAssertionTest extends AbstractIndexAssertionTestCase
 {
 
     use MatchesRegexTestTrait;
 
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new IndexAsset(new Table('foo'), new Index('idx_foo', ['bar'])), 'pattern'];

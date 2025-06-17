@@ -13,6 +13,7 @@ namespace Ork\Crom\Asset;
 
 use Doctrine\DBAL\Schema\Index;
 use Doctrine\DBAL\Schema\Table;
+use Override;
 
 /**
  * An asset representing a database index.
@@ -45,6 +46,7 @@ class IndexAsset extends AbstractAsset
      *
      * @return string The label of this asset.
      */
+    #[Override]
     public function getLabel(): string
     {
         return sprintf('%s.%s', $this->getTable()->getName(), $this->getName());

@@ -13,14 +13,14 @@ class ColumnIsNullableAssertionTest extends AbstractColumnAssertionTestCase
 
     public static function providerForFail(): Generator
     {
-        $column = (new Column('foo', new IntegerType()))->setNotnull(true);
+        $column = new Column('foo', new IntegerType())->setNotnull(true);
         $table = new Table('foo');
         yield [new ColumnAsset($table, $column)];
     }
 
     public static function providerForPass(): Generator
     {
-        $column = (new Column('foo', new IntegerType()))->setNotnull(false);
+        $column = new Column('foo', new IntegerType())->setNotnull(false);
         $table = new Table('foo');
         yield [new ColumnAsset($table, $column)];
     }

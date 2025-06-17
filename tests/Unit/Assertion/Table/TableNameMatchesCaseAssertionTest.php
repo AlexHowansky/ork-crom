@@ -6,6 +6,7 @@ use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\TableAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesCaseTestTrait;
+use Override;
 use RuntimeException;
 
 class TableNameMatchesCaseAssertionTest extends AbstractTableAssertionTestCase
@@ -13,6 +14,7 @@ class TableNameMatchesCaseAssertionTest extends AbstractTableAssertionTestCase
 
     use MatchesCaseTestTrait;
 
+    #[\Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new TableAsset(new Table('FOO')), 'strategy'];

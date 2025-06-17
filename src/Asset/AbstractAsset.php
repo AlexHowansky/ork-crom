@@ -40,7 +40,7 @@ abstract class AbstractAsset implements AssetInterface
     public function getType(): string
     {
         return strtolower(
-            preg_replace('/Asset$/', '', (new ReflectionClass($this))->getShortName())
+            preg_replace('/Asset$/', '', new ReflectionClass($this)->getShortName())
                 ?? throw new RuntimeException('Unable to determine asset type.')
         );
     }

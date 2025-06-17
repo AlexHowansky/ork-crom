@@ -6,7 +6,6 @@ use Doctrine\DBAL\Platforms\OraclePlatform;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
-use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Scan;
 use Ork\Crom\Scanner\AbstractScanner;
 use PHPUnit\Framework\TestCase;
@@ -31,7 +30,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
 
     protected function getDatabaseConfig(): string
     {
-        $file = sprintf('%s/db.yaml', dirname((new ReflectionClass($this))->getFileName()));
+        $file = sprintf('%s/db.yaml', dirname(new ReflectionClass($this)->getFileName()));
         if (file_exists($file) === false) {
             throw new RuntimeException(sprintf('Missing required database config file %s', $file));
         }
@@ -41,7 +40,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
     protected function getSchemaDirs(): array
     {
         return [
-            dirname((new ReflectionClass($this))->getFileName()),
+            dirname(new ReflectionClass($this)->getFileName()),
             __DIR__,
         ];
     }
@@ -52,7 +51,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
             $file = sprintf(
                 $pattern,
                 $schemaDir,
-                (new ReflectionClass($this))->getShortName(),
+                new ReflectionClass($this)->getShortName(),
                 $this->name()
             );
             if (file_exists($file) === true) {
@@ -79,7 +78,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
         $file = sprintf(
             '%s/config/%s/%s.yaml',
             __DIR__,
-            (new ReflectionClass($this))->getShortName(),
+            new ReflectionClass($this)->getShortName(),
             $this->name()
         );
         if (file_exists($file) === false) {
@@ -105,7 +104,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
 
     public function setUp(): void
     {
-        $this->scan = (new Scan())
+        $this->scan = new Scan()
             ->mergeConfig($this->getDatabaseConfig())
             ->mergeConfig($this->getTestConfig());
         $this->executeStatement($this->getTeardownSchema());

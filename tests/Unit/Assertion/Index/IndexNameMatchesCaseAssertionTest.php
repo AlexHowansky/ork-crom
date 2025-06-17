@@ -7,6 +7,7 @@ use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\IndexAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesCaseTestTrait;
+use Override;
 use RuntimeException;
 
 class IndexNameMatchesCaseAssertionTest extends AbstractIndexAssertionTestCase
@@ -14,6 +15,7 @@ class IndexNameMatchesCaseAssertionTest extends AbstractIndexAssertionTestCase
 
     use MatchesCaseTestTrait;
 
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new IndexAsset(new Table('foo'), new Index('idx_foo', ['bar'])), 'strategy'];

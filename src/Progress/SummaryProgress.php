@@ -14,6 +14,7 @@ namespace Ork\Crom\Progress;
 use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Assertion\AssertionInterface;
 use Ork\Crom\Scanner\ScannerInterface;
+use Override;
 
 /**
  * A progress meter that displays a summarization.
@@ -39,6 +40,7 @@ class SummaryProgress extends SilentProgress
      *
      * @return void
      */
+    #[Override]
     public function fail(ScannerInterface $scanner, AssetInterface $asset, AssertionInterface $assertion): void
     {
         parent::fail($scanner, $asset, $assertion);

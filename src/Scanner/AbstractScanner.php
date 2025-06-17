@@ -90,7 +90,7 @@ abstract class AbstractScanner implements ScannerInterface
     {
         static $assertionInterface = null;
         if ($assertionInterface === null) {
-            $assertionInterface = (new ReflectionClass(AssertionInterface::class));
+            $assertionInterface = new ReflectionClass(AssertionInterface::class);
         }
         if (array_key_exists('assertion', $assertionConfig) === false) {
             throw new RuntimeException('Configuration is missing assertion');
@@ -161,7 +161,7 @@ abstract class AbstractScanner implements ScannerInterface
      */
     public function getName(): string
     {
-        return lcfirst((string) preg_replace('/Scanner$/', '', (new ReflectionClass($this))->getShortName()));
+        return lcfirst((string) preg_replace('/Scanner$/', '', new ReflectionClass($this)->getShortName()));
     }
 
     /**

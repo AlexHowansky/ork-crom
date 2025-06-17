@@ -9,6 +9,7 @@ use Ork\Crom\Scanner\ScannerInterface;
 use Ork\Crom\Tests\Unit\AbstractUnitTestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use ReflectionClass;
 
 abstract class AbstractScannerTestCase extends AbstractUnitTestCase
 {
@@ -29,7 +30,7 @@ abstract class AbstractScannerTestCase extends AbstractUnitTestCase
         $this->assertSame($logger, $scanner->getLogger());
         $this->assertSame($schemaManager, $scanner->getSchemaManager());
         $this->assertSame(
-            strtolower((string) preg_replace('/Scanner$/', '', (new \ReflectionClass($scanner))->getShortName())),
+            strtolower((string) preg_replace('/Scanner$/', '', new ReflectionClass($scanner)->getShortName())),
             $scanner->getName()
         );
     }

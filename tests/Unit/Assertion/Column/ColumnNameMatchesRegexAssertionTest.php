@@ -8,12 +8,14 @@ use Doctrine\DBAL\Types\StringType;
 use Generator;
 use Ork\Crom\Asset\ColumnAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesRegexTestTrait;
+use Override;
 
 class ColumnNameMatchesRegexAssertionTest extends AbstractColumnAssertionTestCase
 {
 
     use MatchesRegexTestTrait;
 
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new ColumnAsset(new Table('FOO'), new Column('BAR', new StringType())), 'pattern'];

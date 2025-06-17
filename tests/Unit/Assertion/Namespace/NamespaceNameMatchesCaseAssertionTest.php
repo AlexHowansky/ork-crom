@@ -5,6 +5,7 @@ namespace Ork\Crom\Tests\Unit\Assertion\Namespace;
 use Generator;
 use Ork\Crom\Asset\NamespaceAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesCaseTestTrait;
+use Override;
 use RuntimeException;
 
 class NamespaceNameMatchesCaseAssertionTest extends AbstractNamespaceAssertionTestCase
@@ -12,6 +13,7 @@ class NamespaceNameMatchesCaseAssertionTest extends AbstractNamespaceAssertionTe
 
     use MatchesCaseTestTrait;
 
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new NamespaceAsset('FOO'), 'strategy'];

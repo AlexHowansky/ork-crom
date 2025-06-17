@@ -14,6 +14,7 @@ namespace Ork\Crom\Progress;
 use Ork\Crom\Asset\AssetInterface;
 use Ork\Crom\Assertion\AssertionInterface;
 use Ork\Crom\Scanner\ScannerInterface;
+use Override;
 
 /**
  * A verbose progress meter.
@@ -30,6 +31,7 @@ class VerboseProgress extends FailProgress
      *
      * @return void
      */
+    #[Override]
     public function pass(ScannerInterface $scanner, AssetInterface $asset, AssertionInterface $assertion): void
     {
         parent::pass($scanner, $asset, $assertion);

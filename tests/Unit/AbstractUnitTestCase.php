@@ -20,7 +20,7 @@ abstract class AbstractUnitTestCase extends TestCase
     {
         $file = sprintf(
             '%s/config/%s.%s',
-            dirname((new ReflectionClass($this))->getFileName()),
+            dirname(new ReflectionClass($this)->getFileName()),
             $this->name(),
             $extension
         );

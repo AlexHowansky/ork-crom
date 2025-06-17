@@ -22,7 +22,7 @@ class ColumnHasDefaultAssertionTest extends AbstractColumnAssertionTestCase
     public static function providerForPass(): Generator
     {
         foreach ([-1, 0, 1] as $default) {
-            $column = (new Column('foo', new IntegerType()))->setDefault($default);
+            $column = new Column('foo', new IntegerType())->setDefault($default);
             $table = new Table('foo');
             yield [new ColumnAsset($table, $column)];
             yield [new ColumnAsset($table, $column), ['value' => $default]];

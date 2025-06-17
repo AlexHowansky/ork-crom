@@ -114,7 +114,7 @@ abstract class AbstractAssertion implements AssertionInterface
      */
     public function getName(): string
     {
-        return lcfirst((string) preg_replace('/Assertion$/', '', (new ReflectionClass($this))->getShortName()));
+        return lcfirst((string) preg_replace('/Assertion$/', '', new ReflectionClass($this)->getShortName()));
     }
 
     /**

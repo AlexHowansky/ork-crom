@@ -22,13 +22,13 @@ abstract class AbstractAssertionTestCase extends TestCase
 
     protected function getAssertion(array $config = []): AssertionInterface
     {
-        if (preg_match('/^(.+)Test$/', (new ReflectionClass($this))->getShortName(), $match) !== 1) {
+        if (preg_match('/^(.+)Test$/', new ReflectionClass($this)->getShortName(), $match) !== 1) {
             throw new RuntimeException('Unable to determine assertion class for test.');
         }
         $assertionClass = sprintf(
             '%s\%s\%s',
-            (new ReflectionClass(AssertionInterface::class))->getNamespaceName(),
-            basename(str_replace('\\', '/', (new ReflectionClass($this))->getNamespaceName())),
+            new ReflectionClass(AssertionInterface::class)->getNamespaceName(),
+            basename(str_replace('\\', '/', new ReflectionClass($this)->getNamespaceName())),
             $match[1]
         );
         if (class_exists($assertionClass) === false) {

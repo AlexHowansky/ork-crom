@@ -131,7 +131,7 @@ class Scan
         if (isset($this->progress) === false) {
             $className = sprintf(
                 '%s\%sProgress',
-                (new ReflectionClass(ProgressInterface::class))->getNamespaceName(),
+                new ReflectionClass(ProgressInterface::class)->getNamespaceName(),
                 ucfirst(strtolower((string) $this->getConfig('progress', 'silent')))
             );
             if (class_exists($className) === false) {
@@ -171,7 +171,7 @@ class Scan
             ? $config['scanner']
             : sprintf(
                 '%s\%sScanner',
-                (new ReflectionClass(ScannerInterface::class))->getNamespaceName(),
+                new ReflectionClass(ScannerInterface::class)->getNamespaceName(),
                 ucfirst(strtolower((string) $config['scanner']))
             );
         if (class_exists($class) === false) {

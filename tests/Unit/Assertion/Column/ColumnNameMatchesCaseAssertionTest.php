@@ -8,6 +8,7 @@ use Doctrine\DBAL\Types\StringType;
 use Generator;
 use Ork\Crom\Asset\ColumnAsset;
 use Ork\Crom\Tests\Unit\Assertion\MatchesCaseTestTrait;
+use Override;
 use RuntimeException;
 
 class ColumnNameMatchesCaseAssertionTest extends AbstractColumnAssertionTestCase
@@ -15,6 +16,7 @@ class ColumnNameMatchesCaseAssertionTest extends AbstractColumnAssertionTestCase
 
     use MatchesCaseTestTrait;
 
+    #[Override]
     public static function providerForRequiredParametersMissing(): Generator
     {
         yield [new ColumnAsset(new Table('FOO'), new Column('BAR', new StringType())), 'strategy'];
