@@ -140,7 +140,7 @@ abstract class AbstractFunctionalTestCase extends TestCase
                     $scannerLabel,
                     $assetName,
                     $assertionName,
-                    $shouldPass ? 'yes' : 'no'
+                    $shouldPass === true ? 'yes' : 'no'
                 )
             );
         }
