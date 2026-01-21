@@ -31,9 +31,9 @@ class ProgressTest extends AbstractUnitTestCase
     public function testProgress(ProgressInterface $progress, string $outputRegex): void
     {
         $this->expectOutputRegex($outputRegex);
-        $assertion = $this->createMock(AbstractAssertion::class);
-        $asset = $this->createMock(AbstractAsset::class);
-        $scanner = $this->createMock(AbstractScanner::class);
+        $assertion = $this->createStub(AbstractAssertion::class);
+        $asset = $this->createStub(AbstractAsset::class);
+        $scanner = $this->createStub(AbstractScanner::class);
         $this->assertSame(0, $progress->exit());
         $progress->pass($scanner, $asset, $assertion);
         $this->assertSame(0, $progress->exit());

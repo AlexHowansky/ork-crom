@@ -11,24 +11,24 @@ class AssetTest extends TestCase
     public function testDefaultLabelMatchesName(): void
     {
         $label = md5(random_bytes(32));
-        $mockAsset = $this
-            ->getMockBuilder(AbstractAsset::class)
+        $stubAsset = $this
+            ->getStubBuilder(AbstractAsset::class)
             ->onlyMethods(['getName'])
-            ->getMock();
-        $this->assertSame('', $mockAsset->getLabel());
-        $mockAsset->method('getName')->willReturn($label);
-        $this->assertSame($label, $mockAsset->getLabel());
+            ->getStub();
+        $this->assertSame('', $stubAsset->getLabel());
+        $stubAsset->method('getName')->willReturn($label);
+        $this->assertSame($label, $stubAsset->getLabel());
     }
 
     public function testTypeReflection(): void
     {
         $label = 'x' . md5(random_bytes(32));
-        $mockAsset = $this
-            ->getMockBuilder(AbstractAsset::class)
-            ->setMockClassName($label . 'Asset')
+        $stubAsset = $this
+            ->getStubBuilder(AbstractAsset::class)
+            ->setStubClassName($label . 'Asset')
             ->onlyMethods(['getName'])
-            ->getMock();
-        $this->assertSame($label, $mockAsset->getType());
+            ->getStub();
+        $this->assertSame($label, $stubAsset->getType());
     }
 
 }

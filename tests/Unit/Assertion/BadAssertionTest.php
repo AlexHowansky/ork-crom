@@ -12,18 +12,18 @@ class BadAssertionTest extends TestCase
 
     public function testMissingAssertMethod(): void
     {
-        $mockAssertion = $this
-            ->getMockBuilder(AbstractAssertion::class)
+        $stubAssertion = $this
+            ->getStubBuilder(AbstractAssertion::class)
             ->onlyMethods(['getName'])
             ->disableOriginalConstructor()
-            ->getMock();
-        $mockAsset = $this
-            ->getMockBuilder(AbstractAsset::class)
+            ->getStub();
+        $stubAsset = $this
+            ->getStubBuilder(AbstractAsset::class)
             ->onlyMethods(['getName'])
-            ->getMock();
+            ->getStub();
         $this->expectException(LogicException::class);
         $this->expectExceptionMessageMatches('/ does not have an assert\(\) method./');
-        $mockAssertion($mockAsset);
+        $stubAssertion($stubAsset);
     }
 
 }
