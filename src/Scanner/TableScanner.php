@@ -11,6 +11,7 @@
 
 namespace Ork\Crom\Scanner;
 
+use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\TableAsset;
 
@@ -27,7 +28,9 @@ class TableScanner extends AbstractScanner
      */
     protected function assetIterator(): Generator
     {
-        foreach ($this->getSchemaManager()->listTables() as $table) {
+        $tables = $this->getSchemaManager()->listTables();
+        uasort($tables, fn(Table $a, Table $b): int => $a->getName() <=> $b->getName());
+        foreach ($tables as $table) {
             $asset = new TableAsset($table);
             if ($this->include($asset) === true) {
                 yield $asset;

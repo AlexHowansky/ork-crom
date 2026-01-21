@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: sort
+        scanner: table
+        assertions:
+            - { assertion: tableHasPrimaryKey }

@@ -146,4 +146,28 @@ abstract class AbstractFunctionalTestCase extends TestCase
         }
     }
 
+    /**
+     * The test assertions are configured to fail on every asset, so we'll use
+     * that failure log level to filter out the log entries we want, and then
+     * extract the asset name from them, ensuring they're in alphabetic order.
+     */
+    public function testSort(): void
+    {
+        $log = new TestHandler();
+        $this->scan->pushHandler($log);
+        ($this->scan)();
+        $list = array_map(
+            fn(LogRecord $record): string => $record['context']['asset']?->getLabel(),
+            array_values(
+                array_filter(
+                    $log->getRecords(),
+                    fn(LogRecord $record): bool => $record->level === Level::fromName(AbstractScanner::LOG_LEVEL_FAIL)
+                )
+            )
+        );
+        $sorted = $list;
+        asort($sorted);
+        $this->assertSame($sorted, $list);
+    }
+
 }

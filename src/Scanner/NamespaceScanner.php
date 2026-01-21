@@ -27,7 +27,9 @@ class NamespaceScanner extends AbstractScanner
      */
     protected function assetIterator(): Generator
     {
-        foreach ($this->getSchemaManager()->listSchemaNames() as $namespace) {
+        $namespaces = $this->getSchemaManager()->listSchemaNames();
+        sort($namespaces);
+        foreach ($namespaces as $namespace) {
             $asset = new NamespaceAsset($namespace);
             if ($this->include($asset) === true) {
                 yield $asset;

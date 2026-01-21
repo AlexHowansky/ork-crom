@@ -11,6 +11,8 @@
 
 namespace Ork\Crom\Scanner;
 
+use Doctrine\DBAL\Schema\Column;
+use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\ColumnAsset;
 
@@ -27,8 +29,12 @@ class ColumnScanner extends AbstractScanner
      */
     protected function assetIterator(): Generator
     {
-        foreach ($this->getSchemaManager()->listTables() as $table) {
-            foreach ($table->getColumns() as $column) {
+        $tables = $this->getSchemaManager()->listTables();
+        uasort($tables, fn(Table $a, Table $b): int => $a->getName() <=> $b->getName());
+        foreach ($tables as $table) {
+            $columns = $table->getColumns();
+            uasort($columns, fn(Column $a, Column $b): int => $a->getName() <=> $b->getName());
+            foreach ($columns as $column) {
                 $asset = new ColumnAsset($table, $column);
                 if ($this->include($asset) === true) {
                     yield $asset;

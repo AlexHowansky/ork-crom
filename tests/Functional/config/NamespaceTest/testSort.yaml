@@ -1,0 +1,6 @@
+scanners:
+    -
+        label: sort
+        scanner: namespace
+        assertions:
+            - { assertion: namespaceNameMatchesRegex, invert: true, pattern: /./ }

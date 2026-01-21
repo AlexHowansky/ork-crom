@@ -11,6 +11,8 @@
 
 namespace Ork\Crom\Scanner;
 
+use Doctrine\DBAL\Schema\Index;
+use Doctrine\DBAL\Schema\Table;
 use Generator;
 use Ork\Crom\Asset\IndexAsset;
 
@@ -27,8 +29,12 @@ class IndexScanner extends AbstractScanner
      */
     protected function assetIterator(): Generator
     {
-        foreach ($this->getSchemaManager()->listTables() as $table) {
-            foreach ($table->getIndexes() as $index) {
+        $tables = $this->getSchemaManager()->listTables();
+        uasort($tables, fn(Table $a, Table $b): int => $a->getName() <=> $b->getName());
+        foreach ($tables as $table) {
+            $indexes = $table->getIndexes();
+            uasort($indexes, fn(Index $a, Index $b): int => $a->getName() <=> $b->getName());
+            foreach ($indexes as $index) {
                 $asset = new IndexAsset($table, $index);
                 if ($this->include($asset) === true) {
                     yield $asset;
