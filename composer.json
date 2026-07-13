@@ -17,14 +17,14 @@
         "jawira/case-converter": "^3.6.0",
         "monolog/monolog": "^3.10.0",
         "php": "^8.4",
-        "symfony/yaml": "^7.4.14"
+        "symfony/yaml": "^8.1.1"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
         "ork/phpcs": "dev-master",
         "phpmetrics/phpmetrics": "^3.0.0rc8",
         "phpstan/phpstan": "^2.2.5",
-        "phpunit/phpunit": "^12.5.31",
+        "phpunit/phpunit": "^13.2.4",
         "rector/rector": "^2.5.7",
         "roave/security-advisories": "dev-master"
     },
@@ -46,17 +46,17 @@
         }
     },
     "scripts": {
-        "coverage": "XDEBUG_MODE=coverage phpunit --no-progress",
-        "coverage-functional": "XDEBUG_MODE=coverage phpunit --testsuite functional --no-progress",
-        "coverage-unit": "XDEBUG_MODE=coverage phpunit --testsuite unit --no-progress",
+        "coverage": "XDEBUG_MODE=coverage phpunit",
+        "coverage-functional": "XDEBUG_MODE=coverage phpunit --testsuite functional",
+        "coverage-unit": "XDEBUG_MODE=coverage phpunit --testsuite unit",
         "doc": "phpDocumentor",
         "metrics": "phpmetrics --config=phpmetrics.json",
         "phpcs": "phpcs",
         "phpstan": "phpstan analyze",
         "rector": "rector --dry-run --clear-cache",
-        "test": "phpunit --no-coverage --no-progress",
-        "test-functional": "phpunit --testsuite functional --no-coverage --no-progress --stop-on-defect",
-        "test-unit": "phpunit --testsuite unit --no-coverage --no-progress --stop-on-defect"
+        "test": "phpunit --no-coverage",
+        "test-functional": "phpunit --testsuite functional --no-coverage --stop-on-defect",
+        "test-unit": "phpunit --testsuite unit --no-coverage --stop-on-defect"
     },
     "config": {
         "allow-plugins": {

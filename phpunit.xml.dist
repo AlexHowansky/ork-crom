@@ -5,7 +5,8 @@
     bootstrap="vendor/autoload.php"
     cacheDirectory=".phpunit.cache"
     colors="true"
-    testdox="true"
+    displayDetailsOnAllIssues="true"
+    failOnAllIssues="true"
 >
     <testsuites>
         <testsuite name="unit">
