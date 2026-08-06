@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd07c7105e3381f0983423c9c5102590",
+    "content-hash": "ce41801a756f40eccf29e1a9ba4c896b",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -990,23 +990,22 @@
         },
         {
             "name": "ork/phpcs",
-            "version": "dev-master",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AlexHowansky/ork-phpcs.git",
-                "reference": "9bd5934b6f2ccfed2209311b8327a55b3bf9efa3"
+                "reference": "a5303b84c58895c606b4f399bd76718dcbea1e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AlexHowansky/ork-phpcs/zipball/9bd5934b6f2ccfed2209311b8327a55b3bf9efa3",
-                "reference": "9bd5934b6f2ccfed2209311b8327a55b3bf9efa3",
+                "url": "https://api.github.com/repos/AlexHowansky/ork-phpcs/zipball/a5303b84c58895c606b4f399bd76718dcbea1e24",
+                "reference": "a5303b84c58895c606b4f399bd76718dcbea1e24",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.2.0",
-                "squizlabs/php_codesniffer": "^4.0.1"
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.2.1",
+                "squizlabs/php_codesniffer": "^4.0.4"
             },
-            "default-branch": true,
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1027,9 +1026,9 @@
             ],
             "support": {
                 "issues": "https://github.com/AlexHowansky/ork-phpcs/issues",
-                "source": "https://github.com/AlexHowansky/ork-phpcs/tree/master"
+                "source": "https://github.com/AlexHowansky/ork-phpcs/tree/3.0.2"
             },
-            "time": "2026-04-27T23:30:29+00:00"
+            "time": "2026-08-06T14:26:56+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -4054,19 +4053,20 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "4.0.1",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "0525c73950de35ded110cffafb9892946d7771b5"
+                "reference": "bbdc3d0532623e21838b7041a4364383a8126f96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/0525c73950de35ded110cffafb9892946d7771b5",
-                "reference": "0525c73950de35ded110cffafb9892946d7771b5",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/bbdc3d0532623e21838b7041a4364383a8126f96",
+                "reference": "bbdc3d0532623e21838b7041a4364383a8126f96",
                 "shasum": ""
             },
             "require": {
+                "ext-libxml": "*",
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
@@ -4074,6 +4074,10 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.4.0 || ^9.3.4 || ^10.5.32 || 11.3.3 - 11.5.28 || ^11.5.31"
+            },
+            "suggest": {
+                "ext-iconv": "For accurate character length calculation when the checked files contain multi-byte characters.",
+                "ext-pcntl": "For parallel processing support via the --parallel CLI option."
             },
             "bin": [
                 "bin/phpcbf",
@@ -4129,7 +4133,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-11-10T16:43:36+00:00"
+            "time": "2026-08-06T02:45:27+00:00"
         },
         {
             "name": "staabm/side-effects-detector",
@@ -4237,7 +4241,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ork/phpcs": 20,
         "phpmetrics/phpmetrics": 5,
         "roave/security-advisories": 20
     },

@@ -62,7 +62,6 @@ abstract class AbstractAssertion implements AssertionInterface
          * Since we're relying on the type hinting of that assert() argument to provide runtime validation of which
          * assertions support which types of assets, we'll have to do an explicit check for the assert() method here.
          */
-        // @phpstan-ignore-next-line
         if (method_exists($this, 'assert') === false) {
             throw new LogicException(sprintf('Assertion class %s does not have an assert() method.', static::class));
         }

@@ -21,7 +21,7 @@
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
-        "ork/phpcs": "dev-master",
+        "ork/phpcs": "^3.0.2",
         "phpmetrics/phpmetrics": "^3.0.0rc8",
         "phpstan/phpstan": "^2.2.5",
         "phpunit/phpunit": "^13.2.4",
