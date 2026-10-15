@@ -89,9 +89,7 @@ abstract class AbstractScanner implements ScannerInterface
     protected function getAssertion(array $assertionConfig): AssertionInterface
     {
         static $assertionInterface = null;
-        if ($assertionInterface === null) {
-            $assertionInterface = new ReflectionClass(AssertionInterface::class);
-        }
+        $assertionInterface ??= new ReflectionClass(AssertionInterface::class);
         if (array_key_exists('assertion', $assertionConfig) === false) {
             throw new RuntimeException('Configuration is missing assertion');
         }
