@@ -24,7 +24,7 @@
         "ork/phpcs": "^3.0.2",
         "phpmetrics/phpmetrics": "^3.0.0rc8",
         "phpstan/phpstan": "^2.3.1",
-        "phpunit/phpunit": "^13.4.2",
+        "phpunit/phpunit": "^13.4.5",
         "rector/rector": "^2.7.0",
         "roave/security-advisories": "dev-master"
     },
